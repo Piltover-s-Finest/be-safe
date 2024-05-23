@@ -15,7 +15,7 @@ class _MyProfileState extends State<MyProfile> {
   File? _file;
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       appBar: AppBar(
         title: const Text("My profile"),
       ),
@@ -47,13 +47,14 @@ class _MyProfileState extends State<MyProfile> {
                           child: CircleAvatar(
                             radius: 75,
                             backgroundColor: Colors.grey[300],
-                            backgroundImage: _file == null ? null : FileImage(_file!),
+                            backgroundImage:
+                                _file == null ? null : FileImage(_file!),
                             child: _file == null
                                 ? const Icon(
-                              Icons.person,
-                              size: 33,
-                              color: Colors.blueAccent,
-                            )
+                                    Icons.person,
+                                    size: 33,
+                                    color: Colors.blueAccent,
+                                  )
                                 : null,
                           ),
                         ),
@@ -82,7 +83,8 @@ class _MyProfileState extends State<MyProfile> {
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(15),
                           ),
-                          prefixIcon: const Icon(Icons.person_add_alt_1_rounded),
+                          prefixIcon:
+                              const Icon(Icons.person_add_alt_1_rounded),
                           hintText: "Name Person",
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(15),
@@ -122,7 +124,8 @@ class _MyProfileState extends State<MyProfile> {
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(15),
                           ),
-                          prefixIcon: const Icon(Icons.person_pin_circle_outlined),
+                          prefixIcon:
+                              const Icon(Icons.person_pin_circle_outlined),
                           hintText: "Address ",
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(15),
@@ -172,10 +175,12 @@ class _MyProfileState extends State<MyProfile> {
                           )),
                     ),
                   ),
-                  const SizedBox(height: 10,),
+                  const SizedBox(
+                    height: 10,
+                  ),
                   MaterialButton(
                     color: Colors.teal,
-                    onPressed: () {  },
+                    onPressed: () {},
                     child: const Padding(
                       padding: EdgeInsets.symmetric(horizontal: 100),
                       child: Text(
@@ -192,65 +197,66 @@ class _MyProfileState extends State<MyProfile> {
       ),
     );
   }
+
   dialog() {
     showDialog(
         context: context,
         builder: (context) => AlertDialog(
-          content: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                mainAxisSize: MainAxisSize.min,
+              content: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  IconButton(
-                      onPressed: () async {
-                        File? temp = await ImageFunction.cameraPicker();
-                        if (temp != null) {
-                          _file = temp;
-                        }
-                        setState(() {});
-                      },
-                      icon: const Icon(
-                        Icons.camera_alt_outlined,
-                        size: 40,
-                      )),
-                  const SizedBox(
-                    height: 3,
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      IconButton(
+                          onPressed: () async {
+                            File? temp = await ImageFunction.cameraPicker();
+                            if (temp != null) {
+                              _file = temp;
+                            }
+                            setState(() {});
+                          },
+                          icon: const Icon(
+                            Icons.camera_alt_outlined,
+                            size: 40,
+                          )),
+                      const SizedBox(
+                        height: 3,
+                      ),
+                      const Text(
+                        "Camera",
+                        style: TextStyle(fontSize: 15),
+                      )
+                    ],
                   ),
-                  const Text(
-                    "Camera",
-                    style: TextStyle(fontSize: 15),
-                  )
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      IconButton(
+                          onPressed: () async {
+                            File? temp = await ImageFunction.galleryPicker();
+                            if (temp != null) {
+                              _file = temp;
+                            }
+                            setState(() {});
+                          },
+                          icon: const Icon(
+                            Icons.image_outlined,
+                            size: 40,
+                          )),
+                      const SizedBox(
+                        height: 3,
+                      ),
+                      const Text(
+                        "Gallery",
+                        style: TextStyle(fontSize: 15),
+                      )
+                    ],
+                  ),
                 ],
               ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  IconButton(
-                      onPressed: () async {
-                        File? temp = await ImageFunction.galleryPicker();
-                        if (temp != null) {
-                          _file = temp;
-                        }
-                        setState(() {});
-                      },
-                      icon: const Icon(
-                        Icons.image_outlined,
-                        size: 40,
-                      )),
-                  const SizedBox(
-                    height: 3,
-                  ),
-                  const Text(
-                    "Gallery",
-                    style: TextStyle(fontSize: 15),
-                  )
-                ],
-              ),
-            ],
-          ),
-        ));
+            ));
   }
 }

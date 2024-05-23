@@ -43,8 +43,8 @@ class _MedicalTestsState extends State<MedicalTests> {
                     child: InkWell(
                         onTap: () async {
                           File? temp = await ImageFunction.galleryPicker();
-                          if (temp!= null) {
-                            _img=temp;
+                          if (temp != null) {
+                            _img = temp;
                           }
                           setState(() {});
                         },
@@ -60,9 +60,9 @@ class _MedicalTestsState extends State<MedicalTests> {
                         color: const Color(0xff0077b6)),
                     child: InkWell(
                         onTap: () async {
-                          File?temp = await ImageFunction.cameraPicker();
-                          if (temp!= null) {
-                            _img=temp;
+                          File? temp = await ImageFunction.cameraPicker();
+                          if (temp != null) {
+                            _img = temp;
                           }
                           setState(() {});
                         },
@@ -132,22 +132,38 @@ class _MedicalTestsState extends State<MedicalTests> {
               children: [
                 Padding(
                   padding: const EdgeInsets.all(15),
-                  child: ElevatedButton(onPressed: () {},
+                  child: ElevatedButton(
+                    onPressed: () {},
                     style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.teal,
                         padding: const EdgeInsets.symmetric(horizontal: 50)),
-                    child: const Text("Send",
-                      style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold,color: Colors.white),),),
+                    child: const Text(
+                      "Send",
+                      style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white),
+                    ),
+                  ),
                 ),
-                const SizedBox(width: 60,),
-                ElevatedButton(onPressed: () {
-                  Navigator.pushNamed(context, MyTests.routName);
-                },
+                const SizedBox(
+                  width: 60,
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, MyTests.routName);
+                  },
                   style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.teal,
                       padding: const EdgeInsets.symmetric(horizontal: 50)),
-                  child: const Text("view",
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold,color: Colors.white),),),
+                  child: const Text(
+                    "view",
+                    style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white),
+                  ),
+                ),
               ],
             )
           ],

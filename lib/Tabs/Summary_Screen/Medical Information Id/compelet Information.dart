@@ -7,31 +7,30 @@ class CompleteInformation extends StatefulWidget {
   @override
   State<CompleteInformation> createState() => _CompleteInformationState();
 }
-enum Select { yes,no }
+
+enum Select { yes, no }
+
 class _CompleteInformationState extends State<CompleteInformation> {
-  int select1=0;
-  int select2=1;
-  int select3=2;
-  int select4=3;
-  int select5=4;
-  int select6=5;
+  int select1 = 0;
+  int select2 = 1;
+  int select3 = 2;
+  int select4 = 3;
+  int select5 = 4;
+  int select6 = 5;
   Select? select7;
-  int select8=9;
-
-
+  int select8 = 9;
 
   bool _homeFieldVisible = false;
 
   void handleSelection(Select? value) {
     setState(() {
-      select7=value;
+      select7 = value;
       _homeFieldVisible = value == Select.yes;
     });
   }
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
         title: const Text("Complete Information"),
@@ -42,17 +41,17 @@ class _CompleteInformationState extends State<CompleteInformation> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              margin: const EdgeInsets.symmetric(horizontal: 8,vertical: 8),
+              margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
               height: 1670,
               width: double.infinity,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
-                color: const Color(0xffB4D4FF),//0xff89c2d9 ,BBE2EC
+                color: const Color(0xffB4D4FF), //0xff89c2d9 ,BBE2EC
               ),
               child: Column(
                 children: [
                   const Padding(
-                    padding: EdgeInsets.only(right: 50,top: 10),
+                    padding: EdgeInsets.only(right: 50, top: 10),
                     child: Text(
                       "Is there a disease of blood pressure",
                       style: TextStyle(
@@ -61,7 +60,9 @@ class _CompleteInformationState extends State<CompleteInformation> {
                       ),
                     ),
                   ),
-                  const SizedBox(height: 7,),
+                  const SizedBox(
+                    height: 7,
+                  ),
                   RadioListTile(
                       activeColor: Colors.black,
                       title: const Text(
@@ -74,8 +75,7 @@ class _CompleteInformationState extends State<CompleteInformation> {
                         setState(() {
                           select1 = val!;
                         });
-                      }
-                      ),
+                      }),
                   RadioListTile(
                       activeColor: Colors.black,
                       title: const Text("NO",
@@ -88,9 +88,8 @@ class _CompleteInformationState extends State<CompleteInformation> {
                         });
                       }),
                   const Divider(color: Colors.black, height: 1),
-
                   const Padding(
-                    padding: EdgeInsets.only(right: 100,top: 10),
+                    padding: EdgeInsets.only(right: 100, top: 10),
                     child: Text(
                       "Is there a disease of diabetes",
                       style: TextStyle(
@@ -99,7 +98,9 @@ class _CompleteInformationState extends State<CompleteInformation> {
                       ),
                     ),
                   ),
-                  const SizedBox(height: 7,),
+                  const SizedBox(
+                    height: 7,
+                  ),
                   RadioListTile(
                     activeColor: Colors.black,
                     title: const Text(
@@ -127,7 +128,7 @@ class _CompleteInformationState extends State<CompleteInformation> {
                       }),
                   const Divider(color: Colors.black, height: 1),
                   const Padding(
-                    padding: EdgeInsets.only(right: 120,top: 10),
+                    padding: EdgeInsets.only(right: 120, top: 10),
                     child: Text(
                       "Is there any heart disease",
                       style: TextStyle(
@@ -136,7 +137,9 @@ class _CompleteInformationState extends State<CompleteInformation> {
                       ),
                     ),
                   ),
-                  const SizedBox(height: 7,),
+                  const SizedBox(
+                    height: 7,
+                  ),
                   RadioListTile(
                     activeColor: Colors.black,
                     title: const Text(
@@ -164,7 +167,7 @@ class _CompleteInformationState extends State<CompleteInformation> {
                       }),
                   const Divider(color: Colors.black, height: 1),
                   const Padding(
-                    padding: EdgeInsets.only(right: 120,top: 10),
+                    padding: EdgeInsets.only(right: 120, top: 10),
                     child: Text(
                       "Is there any Kidney disease",
                       style: TextStyle(
@@ -173,7 +176,9 @@ class _CompleteInformationState extends State<CompleteInformation> {
                       ),
                     ),
                   ),
-                  const SizedBox(height: 7,),
+                  const SizedBox(
+                    height: 7,
+                  ),
                   RadioListTile(
                     activeColor: Colors.black,
                     title: const Text(
@@ -201,7 +206,7 @@ class _CompleteInformationState extends State<CompleteInformation> {
                       }),
                   const Divider(color: Colors.black, height: 1),
                   const Padding(
-                    padding: EdgeInsets.only(right: 140,top: 10),
+                    padding: EdgeInsets.only(right: 140, top: 10),
                     child: Text(
                       "Is there any liver disease",
                       style: TextStyle(
@@ -210,7 +215,9 @@ class _CompleteInformationState extends State<CompleteInformation> {
                       ),
                     ),
                   ),
-                  const SizedBox(height: 7,),
+                  const SizedBox(
+                    height: 7,
+                  ),
                   RadioListTile(
                     activeColor: Colors.black,
                     title: const Text(
@@ -238,7 +245,7 @@ class _CompleteInformationState extends State<CompleteInformation> {
                       }),
                   const Divider(color: Colors.black, height: 1),
                   const Padding(
-                    padding: EdgeInsets.only(right: 130,top: 10),
+                    padding: EdgeInsets.only(right: 130, top: 10),
                     child: Text(
                       "Is there any blood disease",
                       style: TextStyle(
@@ -247,7 +254,9 @@ class _CompleteInformationState extends State<CompleteInformation> {
                       ),
                     ),
                   ),
-                  const SizedBox(height: 7,),
+                  const SizedBox(
+                    height: 7,
+                  ),
                   RadioListTile(
                     activeColor: Colors.black,
                     title: const Text(
@@ -275,7 +284,10 @@ class _CompleteInformationState extends State<CompleteInformation> {
                       }),
                   const Divider(color: Colors.black, height: 1),
                   const Padding(
-                    padding: EdgeInsets.only(right: 10,top: 10,),
+                    padding: EdgeInsets.only(
+                      right: 10,
+                      top: 10,
+                    ),
                     child: Text(
                       " there specific virus or there other diseases",
                       style: TextStyle(
@@ -284,7 +296,9 @@ class _CompleteInformationState extends State<CompleteInformation> {
                       ),
                     ),
                   ),
-                  const SizedBox(height: 7,),
+                  const SizedBox(
+                    height: 7,
+                  ),
                   RadioListTile(
                     activeColor: Colors.black,
                     title: const Text(
@@ -296,14 +310,13 @@ class _CompleteInformationState extends State<CompleteInformation> {
                     onChanged: handleSelection,
                   ),
                   if (_homeFieldVisible)
-                     Padding(
+                    Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: TextField(
-                        style: const TextStyle(color: Colors.black,fontWeight: FontWeight.bold),
+                        style: const TextStyle(
+                            color: Colors.black, fontWeight: FontWeight.bold),
                         cursorColor: Colors.black,
-
                         cursorRadius: const Radius.circular(16),
-
                         decoration: InputDecoration(
                           fillColor: Colors.white,
                           filled: true,
@@ -326,9 +339,8 @@ class _CompleteInformationState extends State<CompleteInformation> {
                         });
                       }),
                   const Divider(color: Colors.black, height: 1),
-
                   const Padding(
-                    padding: EdgeInsets.only(right: 100,top: 10),
+                    padding: EdgeInsets.only(right: 100, top: 10),
                     child: Text(
                       "Is there a disease of diabetes",
                       style: TextStyle(
@@ -337,7 +349,9 @@ class _CompleteInformationState extends State<CompleteInformation> {
                       ),
                     ),
                   ),
-                  const SizedBox(height: 7,),
+                  const SizedBox(
+                    height: 7,
+                  ),
                   RadioListTile(
                     activeColor: Colors.black,
                     title: const Text(
@@ -429,17 +443,23 @@ class _CompleteInformationState extends State<CompleteInformation> {
                           select8 = val!;
                         });
                       }),
-
-
                 ],
               ),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 75),
-              child: MaterialButton(onPressed: (){},color: Colors.teal,
+              child: MaterialButton(
+                onPressed: () {},
+                color: Colors.teal,
                 padding: const EdgeInsets.symmetric(horizontal: 100),
-                child: const Text("Save",style: TextStyle(color: Colors.white,
-                    fontSize: 15,fontWeight: FontWeight.bold),),),
+                child: const Text(
+                  "Save",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold),
+                ),
+              ),
             )
           ],
         ),

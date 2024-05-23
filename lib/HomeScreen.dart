@@ -48,7 +48,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   List<Widget> tabs = [
-       SummaryScreen(),
+    SummaryScreen(),
     const ShareScreen(),
     QrCodeScreen(),
     const MapScreen(),

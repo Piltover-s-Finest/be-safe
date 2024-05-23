@@ -9,24 +9,26 @@ import 'Medical_rays.dart';
 import 'medical paper.dart';
 import 'medical_tests.dart';
 
-
-
 class SummaryScreen extends StatelessWidget {
-
-     SummaryScreen({super.key});
+  SummaryScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-     drawer: const HomeDrawer(),
-        appBar: AppBar(
-          actions: [
-            IconButton(onPressed: (){
-              Navigator.pushNamed(context, NotificationScreen.routName);
-            }, icon: const Icon(Icons.notifications,color: Colors.white,))
-          ],
+      drawer: const HomeDrawer(),
+      appBar: AppBar(
+        actions: [
+          IconButton(
+              onPressed: () {
+                Navigator.pushNamed(context, NotificationScreen.routName);
+              },
+              icon: const Icon(
+                Icons.notifications,
+                color: Colors.white,
+              ))
+        ],
         title: const Text("Summary"),
-    ),
+      ),
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -36,14 +38,14 @@ class SummaryScreen extends StatelessWidget {
               margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: const Color(0xff087E8B)
-              ),
+                  color: const Color(0xff087E8B)),
               child: Column(
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(1),
                     child: Image.asset(
-                        "assets/images/medical information card.png", ),
+                      "assets/images/medical information card.png",
+                    ),
                   ),
                   const Text(
                     "Prepare your medical ID",
@@ -57,15 +59,16 @@ class SummaryScreen extends StatelessWidget {
                     padding: EdgeInsets.all(12.0),
                     child: Text(
                       " In the event of an emergency,\n"
-                          " first responders can look at your"
-                          " medical identification information for information,\n"
-                          "Contribute to saving your life",
+                      " first responders can look at your"
+                      " medical identification information for information,\n"
+                      "Contribute to saving your life",
                       style: TextStyle(color: Colors.white, fontSize: 17),
                     ),
                   ),
                   MaterialButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, MedicalInformation.routeName);
+                      Navigator.pushNamed(
+                          context, MedicalInformation.routeName);
                     },
                     color: const Color(0XFF0b4b62),
                     padding: const EdgeInsets.symmetric(horizontal: 100),
@@ -84,13 +87,14 @@ class SummaryScreen extends StatelessWidget {
               margin: const EdgeInsets.symmetric(horizontal: 20),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: const Color(0xff087E8B)
-              ),
+                  color: const Color(0xff087E8B)),
               child: Column(
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Image.asset("assets/images/pharmaceutical.png",),
+                    child: Image.asset(
+                      "assets/images/pharmaceutical.png",
+                    ),
                   ),
                   const SizedBox(
                     height: 10,
@@ -105,11 +109,9 @@ class SummaryScreen extends StatelessWidget {
                   ),
                   const Padding(
                     padding: EdgeInsets.all(12.0),
-                    child: Text("All your medications in one place.\nYou can set your schedule"
-                        "Timeline,\ncheck interactions and track what you eat",
-
-
-
+                    child: Text(
+                      "All your medications in one place.\nYou can set your schedule"
+                      "Timeline,\ncheck interactions and track what you eat",
                       style: TextStyle(color: Colors.white, fontSize: 17),
                     ),
                   ),
@@ -134,14 +136,15 @@ class SummaryScreen extends StatelessWidget {
               margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: const Color(0xff087E8B)
-              ),
+                  color: const Color(0xff087E8B)),
               child: Column(
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(12),
                     child: Image.asset(
-                      "assets/images/XRay.png",width: 120, ),
+                      "assets/images/XRay.png",
+                      width: 120,
+                    ),
                   ),
                   const Text(
                     "Preparation your Rays",
@@ -155,7 +158,7 @@ class SummaryScreen extends StatelessWidget {
                     padding: EdgeInsets.all(12.0),
                     child: Text(
                       "Organize your medical rays to streamline access when needed,"
-                          "ensuring efficiency and ease of retrieval",
+                      "ensuring efficiency and ease of retrieval",
                       style: TextStyle(color: Colors.white, fontSize: 17),
                     ),
                   ),
@@ -180,14 +183,14 @@ class SummaryScreen extends StatelessWidget {
               margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: const Color(0xff087E8B)
-              ),
+                  color: const Color(0xff087E8B)),
               child: Column(
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(12),
                     child: Image.asset(
-                      "assets/images/medical test.png", ),
+                      "assets/images/medical test.png",
+                    ),
                   ),
                   const Text(
                     "Preparation your Tests",
@@ -201,7 +204,7 @@ class SummaryScreen extends StatelessWidget {
                     padding: EdgeInsets.all(12.0),
                     child: Text(
                       "Organize your medical tests to streamline access when needed,"
-                          "ensuring efficiency and ease of retrieval",
+                      "ensuring efficiency and ease of retrieval",
                       style: TextStyle(color: Colors.white, fontSize: 17),
                     ),
                   ),
@@ -226,14 +229,14 @@ class SummaryScreen extends StatelessWidget {
               margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: const Color(0xff087E8B)
-              ),
+                  color: const Color(0xff087E8B)),
               child: Column(
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(12),
                     child: Image.asset(
-                      "assets/images/medical paper.png", ),
+                      "assets/images/medical paper.png",
+                    ),
                   ),
                   const Text(
                     "Preparation your Medical Papers",
@@ -247,13 +250,12 @@ class SummaryScreen extends StatelessWidget {
                     padding: EdgeInsets.all(12.0),
                     child: Text(
                       "Organize your medical Papers to streamline access when needed,"
-                          "ensuring efficiency and ease of retrieval",
+                      "ensuring efficiency and ease of retrieval",
                       style: TextStyle(color: Colors.white, fontSize: 17),
                     ),
                   ),
                   MaterialButton(
                     onPressed: () {
-
                       Navigator.pushNamed(context, MedicalPaper.routName);
                     },
                     color: const Color(0XFF0b4b62),
@@ -269,20 +271,20 @@ class SummaryScreen extends StatelessWidget {
                 ],
               ),
             ),
-
           ],
         ),
       ),
     );
   }
+
   Widget selectedWidget = const MyProfile();
-  void onMenuItemClick(MenuItem item){
+  void onMenuItemClick(MenuItem item) {
     print(item.name);
   }
 }
 
-enum MenuItem{
-  myProfile ,
+enum MenuItem {
+  myProfile,
   relatedAccount,
   myQR,
   myRays,

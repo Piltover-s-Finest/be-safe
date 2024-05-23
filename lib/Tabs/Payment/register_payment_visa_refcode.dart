@@ -12,7 +12,7 @@ class RegisterPayment extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Register Payment"),
       ),
-      body:  SingleChildScrollView(
+      body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -21,14 +21,12 @@ class RegisterPayment extends StatelessWidget {
               margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: const Color(0xff087E8B)
-              ),
+                  color: const Color(0xff087E8B)),
               child: Column(
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(1),
-                    child: Image.asset(
-                        "assets/images/ref code.png" ),
+                    child: Image.asset("assets/images/ref code.png"),
                   ),
                   const Text(
                     "Payment with Ref code",
@@ -66,14 +64,12 @@ class RegisterPayment extends StatelessWidget {
               margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: const Color(0xff087E8B)
-              ),
+                  color: const Color(0xff087E8B)),
               child: Column(
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(1),
-                    child: Image.asset(
-                        "assets/images/visa.png" ),
+                    child: Image.asset("assets/images/visa.png"),
                   ),
                   const Text(
                     "Payment with Visa",

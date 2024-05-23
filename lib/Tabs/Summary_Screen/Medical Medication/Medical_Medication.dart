@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 class MedicalMedication extends StatefulWidget {
   static const String routName = "Medical Medication";
 
-
   MedicalMedication({super.key});
 
   @override
@@ -14,7 +13,7 @@ class MedicalMedication extends StatefulWidget {
 class _MedicalMedicationState extends State<MedicalMedication> {
   int select1 = 0;
   int select2 = 0;
-  bool showError=false ;
+  bool showError = false;
 
   @override
   Widget build(BuildContext context) {
@@ -71,7 +70,7 @@ class _MedicalMedicationState extends State<MedicalMedication> {
                       groupValue: select1,
                       onChanged: (val) {
                         setState(() {
-                          select1= val!;
+                          select1 = val!;
                         });
                       }),
                   const Divider(color: Colors.black, height: 1),
@@ -141,7 +140,7 @@ class _MedicalMedicationState extends State<MedicalMedication> {
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
                       value: 1,
-                      groupValue:  select2 ,
+                      groupValue: select2,
                       onChanged: (val) {
                         setState(() {
                           select2 = val!;
@@ -299,39 +298,32 @@ class _MedicalMedicationState extends State<MedicalMedication> {
             ),
             Center(
                 child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(backgroundColor: Colors.teal),
+                    style:
+                        ElevatedButton.styleFrom(backgroundColor: Colors.teal),
                     onPressed: () {
                       showErrors();
-                      Navigator.pushNamed(context, AddMedicationConcentration.routeName);
-                      setState(() {
-
-                      });
+                      Navigator.pushNamed(
+                          context, AddMedicationConcentration.routeName);
+                      setState(() {});
                     },
                     child: Container(
                         padding: const EdgeInsets.symmetric(horizontal: 120),
                         child: const Text(
                           "Next",
-                          style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),
-                        )
-                    )
-                )
-            ),
-
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, color: Colors.white),
+                        )))),
           ],
-
         ),
       ),
-
     );
-
   }
-  void showErrors(){
- if(select1==null||select2==null){
-    showError=true;
 
- }
- else{
-   showError=false;
- }
+  void showErrors() {
+    if (select1 == null || select2 == null) {
+      showError = true;
+    } else {
+      showError = false;
+    }
   }
 }

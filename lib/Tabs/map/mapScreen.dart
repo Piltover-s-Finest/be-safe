@@ -6,7 +6,7 @@ class MapScreen extends StatelessWidget {
   static const String routName = "Map Screen";
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       appBar: AppBar(
         title: const Text("Map"),
       ),

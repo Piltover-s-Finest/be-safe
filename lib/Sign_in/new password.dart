@@ -18,7 +18,7 @@ class _ForgetPasswordState extends State<NewPassword> {
   var formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       appBar: AppBar(
         title: const Center(child: Text("New Password")),
       ),
@@ -26,14 +26,13 @@ class _ForgetPasswordState extends State<NewPassword> {
         padding: const EdgeInsets.all(8),
         child: Form(
           key: formKey,
-          child:Column(
+          child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Container(
                   padding: const EdgeInsets.symmetric(vertical: 18),
-                  child:
-                  PersonTextFormField(
+                  child: PersonTextFormField(
                     icon: Icons.remove_red_eye,
                     hintText: "",
                     label: "New Password",
@@ -42,20 +41,21 @@ class _ForgetPasswordState extends State<NewPassword> {
                     controller: newPassword,
                   ),
                 ),
-                const SizedBox(height: 10,),
+                const SizedBox(
+                  height: 10,
+                ),
                 Container(
                   padding: const EdgeInsets.symmetric(vertical: 18),
-                  child:
-                  PersonTextFormField(
+                  child: PersonTextFormField(
                     icon: Icons.remove_red_eye,
                     hintText: "",
                     label: " Confirm Password",
                     keyboardType: TextInputType.visiblePassword,
-                    validator: (val){
-                      if(val!.isEmpty) {
+                    validator: (val) {
+                      if (val!.isEmpty) {
                         return 'Please enter the confirm password';
                       }
-                      if(val != newPassword.text) {
+                      if (val != newPassword.text) {
                         return 'Not Match the new password';
                       }
                       return null;
@@ -71,9 +71,7 @@ class _ForgetPasswordState extends State<NewPassword> {
                   shape: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(15),
                       borderSide: const BorderSide(
-                          color: Color.fromRGBO(81, 56, 238, 1)
-                      )
-                  ),
+                          color: Color.fromRGBO(81, 56, 238, 1))),
                   color: const Color.fromRGBO(81, 56, 238, 1),
                   minWidth: double.infinity,
                   padding: const EdgeInsets.symmetric(vertical: 15),
@@ -85,14 +83,15 @@ class _ForgetPasswordState extends State<NewPassword> {
                         fontSize: 16.5),
                   ),
                 ),
-              ]) ,),
+              ]),
+        ),
       ),
     );
   }
-  void checkAccount(){
-    if(formKey.currentState?.validate()==false){
-      return ;
+
+  void checkAccount() {
+    if (formKey.currentState?.validate() == false) {
+      return;
     }
   }
 }
-

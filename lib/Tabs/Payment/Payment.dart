@@ -138,9 +138,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                   onPressed: () {
                     checkAccount();
                     Navigator.pushNamed(context, RegisterPayment.routName);
-                    setState(() {
-
-                    });
+                    setState(() {});
                   },
                   shape: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(15),

@@ -22,12 +22,16 @@ class _ScanQrCodeState extends State<ScanQrCode> {
         title: const Text("Scan QR Code"),
       ),
       body: Column(
-       // mainAxisAlignment: MainAxisAlignment.center,
+        // mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 80),
-            child: Center(child: Text(qrcode,style:const TextStyle(color: Colors.blue,fontSize: 30),)),
+            child: Center(
+                child: Text(
+              qrcode,
+              style: const TextStyle(color: Colors.blue, fontSize: 30),
+            )),
           ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 50),
@@ -35,32 +39,38 @@ class _ScanQrCodeState extends State<ScanQrCode> {
               margin: const EdgeInsets.all(20),
               child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0XFF0b4b62)
-                  ),
-                  onPressed: (){
-                scanQr();
-              }, child: const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 25),
-                child: Text("Scanner",style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
-              )),
+                      backgroundColor: const Color(0XFF0b4b62)),
+                  onPressed: () {
+                    scanQr();
+                  },
+                  child: const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 25),
+                    child: Text(
+                      "Scanner",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  )),
             ),
           ),
-
-
         ],
       ),
     );
   }
-  Future<void>scanQr()async{
-    try{
-      FlutterBarcodeScanner.scanBarcode('#2A99CF', 'cancel', true, ScanMode.QR).then((value){
+
+  Future<void> scanQr() async {
+    try {
+      FlutterBarcodeScanner.scanBarcode('#2A99CF', 'cancel', true, ScanMode.QR)
+          .then((value) {
         setState(() {
-          qrcode=value;
+          qrcode = value;
         });
       });
-    }catch(e){
+    } catch (e) {
       setState(() {
-        qrcode='unable to read this';
+        qrcode = 'unable to read this';
       });
     }
   }

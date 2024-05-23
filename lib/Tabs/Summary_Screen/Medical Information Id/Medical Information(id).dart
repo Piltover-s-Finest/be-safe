@@ -13,7 +13,6 @@ class MedicalInformation extends StatefulWidget {
 }
 
 class _MedicalInformationState extends State<MedicalInformation> {
-
   File? _file;
   @override
   Widget build(BuildContext context) {
@@ -23,17 +22,17 @@ class _MedicalInformationState extends State<MedicalInformation> {
         ),
         body: SingleChildScrollView(
             child: Container(
-              margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 30),
-              height: 530,
-              width: 1100,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(1),
-                color: const Color(0xffB4D4FF), //0xff89c2d9 ,BBE2EC
-              ),
-              child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
+          margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 30),
+          height: 530,
+          width: 1100,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(1),
+            color: const Color(0xffB4D4FF), //0xff89c2d9 ,BBE2EC
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
               const SizedBox(
                 height: 40,
               ),
@@ -79,23 +78,30 @@ class _MedicalInformationState extends State<MedicalInformation> {
                     icon: Icons.sports_martial_arts_outlined,
                     keyboardType: TextInputType.number),
               ),
-              const SizedBox(height: 40,),
-              Center(child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(backgroundColor: Colors.teal),
-                  onPressed: (){
-                Navigator.pushNamed(context, CompleteInformation.routeName);
-              }, child: const Padding(
-                padding: EdgeInsets.all(15.0),
-                child: Text("Complete the information",style: TextStyle(color: Colors.white),),
-              ))),
+              const SizedBox(
+                height: 40,
+              ),
+              Center(
+                  child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.teal),
+                      onPressed: () {
+                        Navigator.pushNamed(
+                            context, CompleteInformation.routeName);
+                      },
+                      child: const Padding(
+                        padding: EdgeInsets.all(15.0),
+                        child: Text(
+                          "Complete the information",
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ))),
               const SizedBox(
                 height: 10,
               ),
-
-
-                        ],
-                      ),
-            )));
+            ],
+          ),
+        )));
   }
 
   dialog() {
