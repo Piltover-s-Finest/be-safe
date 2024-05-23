@@ -3,12 +3,11 @@ import 'package:flutter/material.dart';
 import '../../Sign_in/FormField.dart';
 
 class RelatedAccount extends StatefulWidget {
-   const RelatedAccount({super.key});
+  const RelatedAccount({super.key});
   static const String routName = 'Related Account';
 
   @override
   State<RelatedAccount> createState() => _RelatedAccountState();
-
 }
 
 class _RelatedAccountState extends State<RelatedAccount> {
@@ -17,7 +16,7 @@ class _RelatedAccountState extends State<RelatedAccount> {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       appBar: AppBar(
         title: const Text("Related Account"),
       ),
@@ -25,25 +24,24 @@ class _RelatedAccountState extends State<RelatedAccount> {
         padding: const EdgeInsets.all(8),
         child: Form(
           key: formKey,
-          child:Column(
+          child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Container(
                   padding: const EdgeInsets.symmetric(vertical: 18),
-                  child:
-                  PersonTextFormField(
+                  child: PersonTextFormField(
                     icon: Icons.email_outlined,
                     hintText: "",
                     label: "Email Person",
                     keyboardType: TextInputType.visiblePassword,
-                    validator: (p0) {
-
-                    },
+                    validator: (p0) {},
                     controller: emailPerson,
                   ),
                 ),
-                const SizedBox(height: 10,),
+                const SizedBox(
+                  height: 10,
+                ),
                 MaterialButton(
                   onPressed: () {
                     checkAccount();
@@ -52,9 +50,7 @@ class _RelatedAccountState extends State<RelatedAccount> {
                   shape: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(15),
                       borderSide: const BorderSide(
-                          color: Color.fromRGBO(81, 56, 238, 1)
-                      )
-                  ),
+                          color: Color.fromRGBO(81, 56, 238, 1))),
                   color: const Color.fromRGBO(81, 56, 238, 1),
                   minWidth: double.infinity,
                   padding: const EdgeInsets.symmetric(vertical: 15),
@@ -66,13 +62,15 @@ class _RelatedAccountState extends State<RelatedAccount> {
                         fontSize: 16.5),
                   ),
                 ),
-              ]) ,),
+              ]),
+        ),
       ),
     );
   }
-  void checkAccount(){
-    if(formKey.currentState?.validate()==false){
-      return ;
+
+  void checkAccount() {
+    if (formKey.currentState?.validate() == false) {
+      return;
     }
   }
 }

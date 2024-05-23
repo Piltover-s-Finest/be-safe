@@ -11,7 +11,6 @@ class MyQRCode extends StatefulWidget {
   State<MyQRCode> createState() => _MyQRCodeState();
 }
 
-
 class _MyQRCodeState extends State<MyQRCode> {
   var qrcode = 'Add Data';
   var qrcode1 = 'Add Data';

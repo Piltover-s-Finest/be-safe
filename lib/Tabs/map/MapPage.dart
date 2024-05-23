@@ -53,12 +53,12 @@ class _MapPageState extends State<MapPage> {
           ),
           markerOption: MarkerOption(
               defaultMarker: const MarkerIcon(
-                icon: Icon(
-                  Icons.person_pin_circle,
-                  color: Colors.blue,
-                  size: 56,
-                ),
-              )),
+            icon: Icon(
+              Icons.person_pin_circle,
+              color: Colors.blue,
+              size: 56,
+            ),
+          )),
         ));
   }
 }

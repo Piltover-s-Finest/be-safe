@@ -13,138 +13,158 @@ class OtpScreen extends StatefulWidget {
 class _OtpScreenState extends State<OtpScreen> {
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-
+    return Scaffold(
       appBar: AppBar(
         title: const Center(child: Text("Otp Screen")),
       ),
       body: Column(
         children: [
-          const SizedBox(height: 30,),
-         Container(
-           padding: const EdgeInsets.all(10),
-           child:  const Column(
-             crossAxisAlignment: CrossAxisAlignment.start,
-             children: [Text("Verification code",style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold
-             ,fontSize: 23,
-             ),),
-             Text("We have sent the code verification to gmail",style: TextStyle(fontWeight: FontWeight.normal
-             ,fontSize: 14),),
-
-             ],
-           ),
-         ),
-          const SizedBox(height: 15,),
+          const SizedBox(
+            height: 30,
+          ),
+          Container(
+            padding: const EdgeInsets.all(10),
+            child: const Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "Verification code",
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 23,
+                  ),
+                ),
+                Text(
+                  "We have sent the code verification to gmail",
+                  style: TextStyle(fontWeight: FontWeight.normal, fontSize: 14),
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(
+            height: 15,
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-            SizedBox(height: 68,width: 64,
-            child: TextField(
-              onChanged: (value) {
-                if(value.length==1){
-                  FocusScope.of(context).nextFocus();
-                }
-              },
-              style: Theme.of(context).textTheme.headlineMedium,
-              keyboardType: TextInputType.number,
-              textAlign: TextAlign.center,
-              inputFormatters: [LengthLimitingTextInputFormatter(1),
-              FilteringTextInputFormatter.digitsOnly
-              ],
-              decoration: InputDecoration(
-                hintText: "0",
-                enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
-                    borderSide: const BorderSide(color: Colors.deepPurple,width:2)),
-                focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
-                    borderSide: const BorderSide(color: Colors.deepPurple,width:2)),
-
-
-                )
+              SizedBox(
+                height: 68,
+                width: 64,
+                child: TextField(
+                    onChanged: (value) {
+                      if (value.length == 1) {
+                        FocusScope.of(context).nextFocus();
+                      }
+                    },
+                    style: Theme.of(context).textTheme.headlineMedium,
+                    keyboardType: TextInputType.number,
+                    textAlign: TextAlign.center,
+                    inputFormatters: [
+                      LengthLimitingTextInputFormatter(1),
+                      FilteringTextInputFormatter.digitsOnly
+                    ],
+                    decoration: InputDecoration(
+                      hintText: "0",
+                      enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                          borderSide: const BorderSide(
+                              color: Colors.deepPurple, width: 2)),
+                      focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                          borderSide: const BorderSide(
+                              color: Colors.deepPurple, width: 2)),
+                    )),
               ),
-            ),
-            SizedBox(height: 68,width: 64,
-              child: TextField(
-                  onChanged: (value) {
-                    if(value.length==1){
-                      FocusScope.of(context).nextFocus();
-                    }
-                  },
-                  style: Theme.of(context).textTheme.headlineMedium,
-                  keyboardType: TextInputType.number,
-                  textAlign: TextAlign.center,
-                  inputFormatters: [LengthLimitingTextInputFormatter(1),
-                    FilteringTextInputFormatter.digitsOnly
-                  ],
-                  decoration: InputDecoration(
-                    hintText: "0",
-                    enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        borderSide: const BorderSide(color: Colors.deepPurple,width:2)),
-                    focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        borderSide: const BorderSide(color: Colors.deepPurple,width:2)),
-
-
-                  )
+              SizedBox(
+                height: 68,
+                width: 64,
+                child: TextField(
+                    onChanged: (value) {
+                      if (value.length == 1) {
+                        FocusScope.of(context).nextFocus();
+                      }
+                    },
+                    style: Theme.of(context).textTheme.headlineMedium,
+                    keyboardType: TextInputType.number,
+                    textAlign: TextAlign.center,
+                    inputFormatters: [
+                      LengthLimitingTextInputFormatter(1),
+                      FilteringTextInputFormatter.digitsOnly
+                    ],
+                    decoration: InputDecoration(
+                      hintText: "0",
+                      enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                          borderSide: const BorderSide(
+                              color: Colors.deepPurple, width: 2)),
+                      focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                          borderSide: const BorderSide(
+                              color: Colors.deepPurple, width: 2)),
+                    )),
               ),
-            ),
-            SizedBox(height: 68,width: 64,
-              child: TextField(
-                  onChanged: (value) {
-                    if(value.length==1){
-                      FocusScope.of(context).nextFocus();
-                    }
-                  },
-                  style: Theme.of(context).textTheme.headlineMedium,
-                  keyboardType: TextInputType.number,
-                  textAlign: TextAlign.center,
-                  inputFormatters: [LengthLimitingTextInputFormatter(1),
-                    FilteringTextInputFormatter.digitsOnly
-                  ],
-                  decoration: InputDecoration(
-                    hintText: "0",
-                    enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        borderSide: const BorderSide(color: Colors.deepPurple,width:2)),
-                    focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        borderSide: const BorderSide(color: Colors.deepPurple,width:2)),
-
-
-                  )
+              SizedBox(
+                height: 68,
+                width: 64,
+                child: TextField(
+                    onChanged: (value) {
+                      if (value.length == 1) {
+                        FocusScope.of(context).nextFocus();
+                      }
+                    },
+                    style: Theme.of(context).textTheme.headlineMedium,
+                    keyboardType: TextInputType.number,
+                    textAlign: TextAlign.center,
+                    inputFormatters: [
+                      LengthLimitingTextInputFormatter(1),
+                      FilteringTextInputFormatter.digitsOnly
+                    ],
+                    decoration: InputDecoration(
+                      hintText: "0",
+                      enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                          borderSide: const BorderSide(
+                              color: Colors.deepPurple, width: 2)),
+                      focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                          borderSide: const BorderSide(
+                              color: Colors.deepPurple, width: 2)),
+                    )),
               ),
-            ),
-            SizedBox(height: 68,width: 64,
-              child: TextField(
-                  onChanged: (value) {
-                    if(value.length==1){
-                      FocusScope.of(context).nextFocus();
-                    }
-                  },
-                  style: Theme.of(context).textTheme.headlineMedium,
-                  keyboardType: TextInputType.number,
-                  textAlign: TextAlign.center,
-                  inputFormatters: [LengthLimitingTextInputFormatter(1),
-                    FilteringTextInputFormatter.digitsOnly
-                  ],
-                  decoration: InputDecoration(
-                    hintText: "0",
-                    enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        borderSide: const BorderSide(color: Colors.deepPurple,width:2)),
-                    focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        borderSide: const BorderSide(color: Colors.deepPurple,width:2)),
-
-
-                  )
+              SizedBox(
+                height: 68,
+                width: 64,
+                child: TextField(
+                    onChanged: (value) {
+                      if (value.length == 1) {
+                        FocusScope.of(context).nextFocus();
+                      }
+                    },
+                    style: Theme.of(context).textTheme.headlineMedium,
+                    keyboardType: TextInputType.number,
+                    textAlign: TextAlign.center,
+                    inputFormatters: [
+                      LengthLimitingTextInputFormatter(1),
+                      FilteringTextInputFormatter.digitsOnly
+                    ],
+                    decoration: InputDecoration(
+                      hintText: "0",
+                      enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                          borderSide: const BorderSide(
+                              color: Colors.deepPurple, width: 2)),
+                      focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                          borderSide: const BorderSide(
+                              color: Colors.deepPurple, width: 2)),
+                    )),
               ),
-            ),
-
-          ],),
-          const SizedBox(height: 80,),
+            ],
+          ),
+          const SizedBox(
+            height: 80,
+          ),
           MaterialButton(
             onPressed: () {
               Navigator.pushNamed(context, NewPassword.routName);
@@ -152,10 +172,8 @@ class _OtpScreenState extends State<OtpScreen> {
             },
             shape: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(15),
-                borderSide: const BorderSide(
-                    color: Color.fromRGBO(81, 56, 238, 1)
-                )
-            ),
+                borderSide:
+                    const BorderSide(color: Color.fromRGBO(81, 56, 238, 1))),
             color: const Color.fromRGBO(81, 56, 238, 1),
             minWidth: double.infinity,
             padding: const EdgeInsets.symmetric(vertical: 15),

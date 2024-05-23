@@ -20,7 +20,7 @@ class _ShareWithSomeoneState extends State<ShareWithSomeone> {
             "Share with Someone",
             style: TextStyle(color: Colors.white),
           ),
-        backgroundColor: Colors.teal,
+          backgroundColor: Colors.teal,
         ),
         body: SingleChildScrollView(
             child: Column(
@@ -36,7 +36,9 @@ class _ShareWithSomeoneState extends State<ShareWithSomeone> {
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(5),
-                    child: Image.asset("assets/images/Search_person-removebg-preview.png",height: 170),
+                    child: Image.asset(
+                        "assets/images/Search_person-removebg-preview.png",
+                        height: 170),
                   ),
                   const Text(
                     "Search Responsible Person",
@@ -50,12 +52,13 @@ class _ShareWithSomeoneState extends State<ShareWithSomeone> {
                     padding: EdgeInsets.all(12.0),
                     child: Text(
                       "- If this person uses the be safe app,"
-                          " you can search for him here",
+                      " you can search for him here",
                       style: TextStyle(color: Colors.white, fontSize: 17),
                     ),
-
                   ),
-                  const SizedBox(height: 10,),
+                  const SizedBox(
+                    height: 10,
+                  ),
                   const Padding(
                     padding: EdgeInsets.only(right: 20),
                     child: Text(
@@ -63,7 +66,9 @@ class _ShareWithSomeoneState extends State<ShareWithSomeone> {
                       style: TextStyle(color: Colors.white, fontSize: 17),
                     ),
                   ),
-                  const SizedBox(height: 15,),
+                  const SizedBox(
+                    height: 15,
+                  ),
                   MaterialButton(
                     onPressed: () {
                       //Navigator.pushNamed(context, SearchScreen.routeName);
@@ -82,7 +87,6 @@ class _ShareWithSomeoneState extends State<ShareWithSomeone> {
                 ],
               ),
             ),
-
           ],
         )));
   }
