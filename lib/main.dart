@@ -2,6 +2,7 @@ import 'package:be_safe3/Hospital/HomeScreen.dart';
 import 'package:be_safe3/Hospital/My%20profile%20Hospital.dart';
 import 'package:be_safe3/Sign_in/forgetpassword.dart';
 import 'package:be_safe3/Sign_in/new%20password.dart';
+
 import 'package:be_safe3/Sign_in/otp%20screen.dart';
 import 'package:be_safe3/Tabs/Home%20Drawer/My%20Medicalpaper.dart';
 import 'package:be_safe3/Tabs/Home%20Drawer/My%20QRcode.dart';
@@ -9,8 +10,11 @@ import 'package:be_safe3/Tabs/Home%20Drawer/My%20Rays.dart';
 import 'package:be_safe3/Tabs/Home%20Drawer/My%20Tests.dart';
 import 'package:be_safe3/Tabs/Home%20Drawer/My%20profile.dart';
 import 'package:be_safe3/Tabs/Home%20Drawer/Related%20Account.dart';
+
 import 'package:be_safe3/Tabs/Qr%20code/Scan%20Qr%20code.dart';
+
 import 'package:be_safe3/Tabs/Share/Share_with_Someone.dart';
+
 import 'package:be_safe3/Tabs/Summary_Screen/Medical%20Medication/Add%20the%20Medication%20concentration.dart';
 import 'package:be_safe3/HomeScreen.dart';
 import 'package:be_safe3/Tabs/Summary_Screen/Medical%20Information%20Id/Medical%20Information(id).dart';
