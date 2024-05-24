@@ -10,6 +10,7 @@ import 'package:be_safe3/Tabs/Home%20Drawer/My%20Rays.dart';
 import 'package:be_safe3/Tabs/Home%20Drawer/My%20Tests.dart';
 import 'package:be_safe3/Tabs/Home%20Drawer/My%20profile.dart';
 import 'package:be_safe3/Tabs/Home%20Drawer/Related%20Account.dart';
+import 'package:be_safe3/Tabs/Home%20Drawer/splashScreen.dart';
 
 import 'package:be_safe3/Tabs/Qr%20code/Scan%20Qr%20code.dart';
 
@@ -46,7 +47,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: LoginScreen.routName,
+      initialRoute: SplashScreen.routName,
       routes: {
         LoginScreen.routName: (context) => const LoginScreen(),
         HomePage.routName: (context) => const HomePage(),
@@ -82,6 +83,8 @@ class MyApp extends StatelessWidget {
         MyMedicalPaper.routName: (context) => const MyMedicalPaper(),
         HospitalHomePage.routeName: (context) => const HospitalHomePage(),
         MyProfileHospital.routName: (context) => const MyProfileHospital(),
+        SplashScreen.routName: (context) =>  SplashScreen(),
+
       },
       theme: MyThemeData.darkTheme,
     );
