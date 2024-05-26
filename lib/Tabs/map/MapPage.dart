@@ -21,44 +21,46 @@ class _MapPageState extends State<MapPage> {
   @override
   Widget build(BuildContext context) {
     return OSMFlutter(
-        controller: controller,
-        osmOption: OSMOption(
-          userTrackingOption: const UserTrackingOption(
-            enableTracking: true,
-            unFollowUser: false,
-          ),
-          zoomOption: const ZoomOption(
-            initZoom: 8,
-            minZoomLevel: 3,
-            maxZoomLevel: 19,
-            stepZoom: 1.0,
-          ),
-          userLocationMarker: UserLocationMaker(
-            personMarker: const MarkerIcon(
-              icon: Icon(
-                Icons.location_history_rounded,
-                color: Colors.red,
-                size: 48,
-              ),
-            ),
-            directionArrowMarker: const MarkerIcon(
-              icon: Icon(
-                Icons.double_arrow,
-                size: 48,
-              ),
+      controller: controller,
+      osmOption: OSMOption(
+        userTrackingOption: const UserTrackingOption(
+          enableTracking: true,
+          unFollowUser: false,
+        ),
+        zoomOption: const ZoomOption(
+          initZoom: 8,
+          minZoomLevel: 3,
+          maxZoomLevel: 19,
+          stepZoom: 1.0,
+        ),
+        userLocationMarker: UserLocationMaker(
+          personMarker: const MarkerIcon(
+            icon: Icon(
+              Icons.location_history_rounded,
+              color: Colors.red,
+              size: 48,
             ),
           ),
-          roadConfiguration: const RoadOption(
-            roadColor: Colors.yellowAccent,
+          directionArrowMarker: const MarkerIcon(
+            icon: Icon(
+              Icons.double_arrow,
+              size: 48,
+            ),
           ),
-          markerOption: MarkerOption(
-              defaultMarker: const MarkerIcon(
+        ),
+        roadConfiguration: const RoadOption(
+          roadColor: Colors.yellowAccent,
+        ),
+        markerOption: MarkerOption(
+          defaultMarker: const MarkerIcon(
             icon: Icon(
               Icons.person_pin_circle,
               color: Colors.blue,
               size: 56,
             ),
-          ),),
-        ),);
+          ),
+        ),
+      ),
+    );
   }
 }

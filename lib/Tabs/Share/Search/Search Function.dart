@@ -26,20 +26,22 @@ class SearchFunction extends SearchDelegate {
   List<Widget>? buildActions(BuildContext context) {
     return [
       IconButton(
-          onPressed: () {
-            query = "";
-          },
-          icon: const Icon(Icons.close),),
+        onPressed: () {
+          query = "";
+        },
+        icon: const Icon(Icons.close),
+      ),
     ];
   }
 
   @override
   Widget? buildLeading(BuildContext context) {
     return IconButton(
-        onPressed: () {
-          close(context, null);
-        },
-        icon: const Icon(Icons.arrow_back),);
+      onPressed: () {
+        close(context, null);
+      },
+      icon: const Icon(Icons.arrow_back),
+    );
   }
 
   @override
@@ -58,13 +60,14 @@ class SearchFunction extends SearchDelegate {
               showResults(context);
             },
             child: Card(
-                child: Padding(
-              padding: const EdgeInsets.all(12),
-              child: Text(
-                "${username[i]}",
-                style: const TextStyle(fontSize: 18),
+              child: Padding(
+                padding: const EdgeInsets.all(12),
+                child: Text(
+                  "${username[i]}",
+                  style: const TextStyle(fontSize: 18),
+                ),
               ),
-            ),),
+            ),
           );
         },
       );
@@ -79,13 +82,14 @@ class SearchFunction extends SearchDelegate {
               showResults(context);
             },
             child: Card(
-                child: Padding(
-              padding: const EdgeInsets.all(12),
-              child: Text(
-                "${filterList![i]}",
-                style: const TextStyle(fontSize: 18),
+              child: Padding(
+                padding: const EdgeInsets.all(12),
+                child: Text(
+                  "${filterList![i]}",
+                  style: const TextStyle(fontSize: 18),
+                ),
               ),
-            ),),
+            ),
           );
         },
       );

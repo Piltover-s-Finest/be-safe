@@ -20,16 +20,18 @@ class HomeDrawer extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Container(
-              alignment: Alignment.center,
-              padding: const EdgeInsets.symmetric(vertical: 55),
-              color: const Color(0xff52B788),
-              child: const Text(
-                "Be Safe Settings",
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 21,
-                    fontWeight: FontWeight.bold,),
-              ),),
+            alignment: Alignment.center,
+            padding: const EdgeInsets.symmetric(vertical: 55),
+            color: const Color(0xff52B788),
+            child: const Text(
+              "Be Safe Settings",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 21,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
           Padding(
             padding: const EdgeInsets.all(10),
             child: InkWell(

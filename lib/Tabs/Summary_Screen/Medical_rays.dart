@@ -35,38 +35,44 @@ class _MedicalRaysState extends State<MedicalRays> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                    height: 50,
-                    width: 50,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(100),
-                        color: const Color(0xff0077b6),),
-                    child: InkWell(
-                        onTap: () async {
-                          File? temp = await ImageFunction.galleryPicker();
-                          if (temp != null) {
-                            _img = temp;
-                          }
-                          setState(() {});
-                        },
-                        child: const Icon(Icons.photo_library),),),
+                  height: 50,
+                  width: 50,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(100),
+                    color: const Color(0xff0077b6),
+                  ),
+                  child: InkWell(
+                    onTap: () async {
+                      File? temp = await ImageFunction.galleryPicker();
+                      if (temp != null) {
+                        _img = temp;
+                      }
+                      setState(() {});
+                    },
+                    child: const Icon(Icons.photo_library),
+                  ),
+                ),
                 const SizedBox(
                   width: 35,
                 ),
                 Container(
-                    height: 50,
-                    width: 50,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(100),
-                        color: const Color(0xff0077b6),),
-                    child: InkWell(
-                        onTap: () async {
-                          File? temp = await ImageFunction.cameraPicker();
-                          if (temp != null) {
-                            _img = temp;
-                          }
-                          setState(() {});
-                        },
-                        child: const Icon(Icons.photo_camera_outlined),),),
+                  height: 50,
+                  width: 50,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(100),
+                    color: const Color(0xff0077b6),
+                  ),
+                  child: InkWell(
+                    onTap: () async {
+                      File? temp = await ImageFunction.cameraPicker();
+                      if (temp != null) {
+                        _img = temp;
+                      }
+                      setState(() {});
+                    },
+                    child: const Icon(Icons.photo_camera_outlined),
+                  ),
+                ),
               ],
             ),
             const SizedBox(
@@ -117,13 +123,15 @@ class _MedicalRaysState extends State<MedicalRays> {
             SizedBox(
               width: 380,
               child: TextFormField(
-                  decoration: InputDecoration(
-                prefixIcon: const Icon(Icons.edit_note_sharp),
-                border: OutlineInputBorder(
+                decoration: InputDecoration(
+                  prefixIcon: const Icon(Icons.edit_note_sharp),
+                  border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(20),
-                    borderSide: const BorderSide(color: Colors.red),),
-                contentPadding: const EdgeInsets.symmetric(vertical: 25),
-              ),),
+                    borderSide: const BorderSide(color: Colors.red),
+                  ),
+                  contentPadding: const EdgeInsets.symmetric(vertical: 25),
+                ),
+              ),
             ),
             const SizedBox(
               height: 25,
@@ -135,14 +143,16 @@ class _MedicalRaysState extends State<MedicalRays> {
                   child: ElevatedButton(
                     onPressed: () {},
                     style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.teal,
-                        padding: const EdgeInsets.symmetric(horizontal: 50),),
+                      backgroundColor: Colors.teal,
+                      padding: const EdgeInsets.symmetric(horizontal: 50),
+                    ),
                     child: const Text(
                       "Send",
                       style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,),
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 ),
@@ -154,14 +164,16 @@ class _MedicalRaysState extends State<MedicalRays> {
                     Navigator.pushNamed(context, MyRays.routName);
                   },
                   style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.teal,
-                      padding: const EdgeInsets.symmetric(horizontal: 50),),
+                    backgroundColor: Colors.teal,
+                    padding: const EdgeInsets.symmetric(horizontal: 50),
+                  ),
                   child: const Text(
                     "view",
                     style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,),
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
               ],

@@ -15,11 +15,12 @@ class ReferenceCode extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
-              margin: const EdgeInsets.symmetric(horizontal: 50),
-              child: const Text(
-                "You should go to any market to pay",
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-              ),),
+            margin: const EdgeInsets.symmetric(horizontal: 50),
+            child: const Text(
+              "You should go to any market to pay",
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+          ),
           const SizedBox(
             height: 13,
           ),
@@ -32,8 +33,9 @@ class ReferenceCode extends StatelessWidget {
           ),
           Container(
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                color: Colors.purple.shade400,),
+              borderRadius: BorderRadius.circular(10),
+              color: Colors.purple.shade400,
+            ),
             padding: const EdgeInsets.symmetric(horizontal: 35),
             child: const Text(
               "2222222",

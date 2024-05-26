@@ -6,7 +6,11 @@ class QrCodeFunction {
   static void scan() async {
     try {
       String code = await FlutterBarcodeScanner.scanBarcode(
-          '#2A99CF', 'cancel', true, ScanMode.QR,);
+        '#2A99CF',
+        'cancel',
+        true,
+        ScanMode.QR,
+      );
       print('code is $code');
     } catch (e) {
       print(e);

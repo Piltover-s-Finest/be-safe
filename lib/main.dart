@@ -83,8 +83,7 @@ class MyApp extends StatelessWidget {
         MyMedicalPaper.routName: (context) => const MyMedicalPaper(),
         HospitalHomePage.routeName: (context) => const HospitalHomePage(),
         MyProfileHospital.routName: (context) => const MyProfileHospital(),
-        SplashScreen.routName: (context) =>  const SplashScreen(),
-
+        SplashScreen.routName: (context) => const SplashScreen(),
       },
       theme: MyThemeData.darkTheme,
     );

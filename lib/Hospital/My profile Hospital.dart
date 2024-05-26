@@ -44,7 +44,11 @@ class _MyProfileState extends State<MyProfileHospital> {
                         child: Container(
                           width: 500,
                           margin: const EdgeInsets.only(
-                              left: 120, top: 10, right: 135, bottom: 10,),
+                            left: 120,
+                            top: 10,
+                            right: 135,
+                            bottom: 10,
+                          ),
                           child: CircleAvatar(
                             radius: 75,
                             backgroundColor: Colors.grey[300],
@@ -79,20 +83,20 @@ class _MyProfileState extends State<MyProfileHospital> {
                     child: TextFormField(
                       keyboardType: TextInputType.name,
                       decoration: InputDecoration(
-                          filled: true,
-                          fillColor: Colors.white,
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(15),
-                          ),
-                          prefixIcon:
-                              const Icon(Icons.person_add_alt_1_rounded),
-                          hintText: "Name Hospital",
-                          enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(15),
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(15),
-                          ),),
+                        filled: true,
+                        fillColor: Colors.white,
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        prefixIcon: const Icon(Icons.person_add_alt_1_rounded),
+                        hintText: "Name Hospital",
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                      ),
                     ),
                   ),
                   Padding(
@@ -100,19 +104,20 @@ class _MyProfileState extends State<MyProfileHospital> {
                     child: TextFormField(
                       keyboardType: TextInputType.emailAddress,
                       decoration: InputDecoration(
-                          filled: true,
-                          fillColor: Colors.white,
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(15),
-                          ),
-                          prefixIcon: const Icon(Icons.email),
-                          hintText: "Email ",
-                          enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(15),
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(15),
-                          ),),
+                        filled: true,
+                        fillColor: Colors.white,
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        prefixIcon: const Icon(Icons.email),
+                        hintText: "Email ",
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                      ),
                     ),
                   ),
                   Padding(
@@ -120,20 +125,21 @@ class _MyProfileState extends State<MyProfileHospital> {
                     child: TextFormField(
                       keyboardType: TextInputType.name,
                       decoration: InputDecoration(
-                          filled: true,
-                          fillColor: Colors.white,
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(15),
-                          ),
-                          prefixIcon:
-                              const Icon(Icons.person_pin_circle_outlined),
-                          hintText: "Address ",
-                          enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(15),
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(15),
-                          ),),
+                        filled: true,
+                        fillColor: Colors.white,
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        prefixIcon:
+                            const Icon(Icons.person_pin_circle_outlined),
+                        hintText: "Address ",
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                      ),
                     ),
                   ),
                   Padding(
@@ -141,19 +147,20 @@ class _MyProfileState extends State<MyProfileHospital> {
                     child: TextFormField(
                       keyboardType: TextInputType.phone,
                       decoration: InputDecoration(
-                          filled: true,
-                          fillColor: Colors.white,
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(15),
-                          ),
-                          prefixIcon: const Icon(Icons.phone),
-                          hintText: "Phone ",
-                          enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(15),
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(15),
-                          ),),
+                        filled: true,
+                        fillColor: Colors.white,
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        prefixIcon: const Icon(Icons.phone),
+                        hintText: "Phone ",
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                      ),
                     ),
                   ),
                   const SizedBox(
@@ -181,63 +188,66 @@ class _MyProfileState extends State<MyProfileHospital> {
 
   dialog() {
     showDialog(
-        context: context,
-        builder: (context) => AlertDialog(
-              content: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      IconButton(
-                          onPressed: () async {
-                            File? temp = await ImageFunction.cameraPicker();
-                            if (temp != null) {
-                              _file = temp;
-                            }
-                            setState(() {});
-                          },
-                          icon: const Icon(
-                            Icons.camera_alt_outlined,
-                            size: 40,
-                          ),),
-                      const SizedBox(
-                        height: 3,
-                      ),
-                      const Text(
-                        "Camera",
-                        style: TextStyle(fontSize: 15),
-                      ),
-                    ],
+      context: context,
+      builder: (context) => AlertDialog(
+        content: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                IconButton(
+                  onPressed: () async {
+                    File? temp = await ImageFunction.cameraPicker();
+                    if (temp != null) {
+                      _file = temp;
+                    }
+                    setState(() {});
+                  },
+                  icon: const Icon(
+                    Icons.camera_alt_outlined,
+                    size: 40,
                   ),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      IconButton(
-                          onPressed: () async {
-                            File? temp = await ImageFunction.galleryPicker();
-                            if (temp != null) {
-                              _file = temp;
-                            }
-                            setState(() {});
-                          },
-                          icon: const Icon(
-                            Icons.image_outlined,
-                            size: 40,
-                          ),),
-                      const SizedBox(
-                        height: 3,
-                      ),
-                      const Text(
-                        "Gallery",
-                        style: TextStyle(fontSize: 15),
-                      ),
-                    ],
+                ),
+                const SizedBox(
+                  height: 3,
+                ),
+                const Text(
+                  "Camera",
+                  style: TextStyle(fontSize: 15),
+                ),
+              ],
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                IconButton(
+                  onPressed: () async {
+                    File? temp = await ImageFunction.galleryPicker();
+                    if (temp != null) {
+                      _file = temp;
+                    }
+                    setState(() {});
+                  },
+                  icon: const Icon(
+                    Icons.image_outlined,
+                    size: 40,
                   ),
-                ],
-              ),
-            ),);
+                ),
+                const SizedBox(
+                  height: 3,
+                ),
+                const Text(
+                  "Gallery",
+                  style: TextStyle(fontSize: 15),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
