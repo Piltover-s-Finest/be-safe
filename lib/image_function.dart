@@ -30,5 +30,6 @@ class ImageFunction {
       }
       return null;
     }
+    return null;
   }
 }

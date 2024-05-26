@@ -37,22 +37,23 @@ class SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: Center(
-          child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          CircularProgressIndicator(
-            valueColor: AlwaysStoppedAnimation<Color>(Colors.blue),
-          ),
-          SizedBox(height: 20),
-          Text(
-            'Loading...',
-            style: TextStyle(
-              fontSize: 20,
-              color: Colors.blue,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            CircularProgressIndicator(
+              valueColor: AlwaysStoppedAnimation<Color>(Colors.blue),
             ),
-          ),
-        ],
-      )),
+            SizedBox(height: 20),
+            Text(
+              'Loading...',
+              style: TextStyle(
+                fontSize: 20,
+                color: Colors.blue,
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
