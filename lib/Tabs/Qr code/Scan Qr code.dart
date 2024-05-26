@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'dart:io';
 
-import '../../image_function.dart';
 
 class ScanQrCode extends StatefulWidget {
   static const String routeName = "Scan Qr Code";
@@ -31,7 +30,7 @@ class _ScanQrCodeState extends State<ScanQrCode> {
                 child: Text(
               qrcode,
               style: const TextStyle(color: Colors.blue, fontSize: 30),
-            )),
+            ),),
           ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 50),
@@ -39,7 +38,7 @@ class _ScanQrCodeState extends State<ScanQrCode> {
               margin: const EdgeInsets.all(20),
               child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0XFF0b4b62)),
+                      backgroundColor: const Color(0XFF0b4b62),),
                   onPressed: () {
                     scanQr();
                   },
@@ -50,9 +49,9 @@ class _ScanQrCodeState extends State<ScanQrCode> {
                       style: TextStyle(
                           color: Colors.white,
                           fontSize: 20,
-                          fontWeight: FontWeight.bold),
+                          fontWeight: FontWeight.bold,),
                     ),
-                  )),
+                  ),),
             ),
           ),
         ],

@@ -54,7 +54,7 @@ class _MedicalInformationState extends State<MedicalInformation> {
                     hintText: "",
                     label: "Birthday Date",
                     icon: Icons.date_range_outlined,
-                    keyboardType: TextInputType.datetime),
+                    keyboardType: TextInputType.datetime,),
               ),
               const SizedBox(
                 height: 5,
@@ -65,7 +65,7 @@ class _MedicalInformationState extends State<MedicalInformation> {
                     hintText: "",
                     label: "Weight",
                     icon: Icons.sports_gymnastics_outlined,
-                    keyboardType: TextInputType.number),
+                    keyboardType: TextInputType.number,),
               ),
               const SizedBox(
                 height: 5,
@@ -76,7 +76,7 @@ class _MedicalInformationState extends State<MedicalInformation> {
                     hintText: "",
                     label: "Height",
                     icon: Icons.sports_martial_arts_outlined,
-                    keyboardType: TextInputType.number),
+                    keyboardType: TextInputType.number,),
               ),
               const SizedBox(
                 height: 40,
@@ -84,10 +84,10 @@ class _MedicalInformationState extends State<MedicalInformation> {
               Center(
                   child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.teal),
+                          backgroundColor: Colors.teal,),
                       onPressed: () {
                         Navigator.pushNamed(
-                            context, CompleteInformation.routeName);
+                            context, CompleteInformation.routeName,);
                       },
                       child: const Padding(
                         padding: EdgeInsets.all(15.0),
@@ -95,13 +95,13 @@ class _MedicalInformationState extends State<MedicalInformation> {
                           "Complete the information",
                           style: TextStyle(color: Colors.white),
                         ),
-                      ))),
+                      ),),),
               const SizedBox(
                 height: 10,
               ),
             ],
           ),
-        )));
+        ),),);
   }
 
   dialog() {
@@ -126,14 +126,14 @@ class _MedicalInformationState extends State<MedicalInformation> {
                           icon: const Icon(
                             Icons.camera_alt_outlined,
                             size: 40,
-                          )),
+                          ),),
                       const SizedBox(
                         height: 3,
                       ),
                       const Text(
                         "Camera",
                         style: TextStyle(fontSize: 15),
-                      )
+                      ),
                     ],
                   ),
                   Column(
@@ -151,18 +151,18 @@ class _MedicalInformationState extends State<MedicalInformation> {
                           icon: const Icon(
                             Icons.image_outlined,
                             size: 40,
-                          )),
+                          ),),
                       const SizedBox(
                         height: 3,
                       ),
                       const Text(
                         "Gallery",
                         style: TextStyle(fontSize: 15),
-                      )
+                      ),
                     ],
                   ),
                 ],
               ),
-            ));
+            ),);
   }
 }

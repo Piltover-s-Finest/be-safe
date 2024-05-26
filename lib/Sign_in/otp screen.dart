@@ -62,19 +62,19 @@ class _OtpScreenState extends State<OtpScreen> {
                     textAlign: TextAlign.center,
                     inputFormatters: [
                       LengthLimitingTextInputFormatter(1),
-                      FilteringTextInputFormatter.digitsOnly
+                      FilteringTextInputFormatter.digitsOnly,
                     ],
                     decoration: InputDecoration(
                       hintText: "0",
                       enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                           borderSide: const BorderSide(
-                              color: Colors.deepPurple, width: 2)),
+                              color: Colors.deepPurple, width: 2,),),
                       focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                           borderSide: const BorderSide(
-                              color: Colors.deepPurple, width: 2)),
-                    )),
+                              color: Colors.deepPurple, width: 2,),),
+                    ),),
               ),
               SizedBox(
                 height: 68,
@@ -90,19 +90,19 @@ class _OtpScreenState extends State<OtpScreen> {
                     textAlign: TextAlign.center,
                     inputFormatters: [
                       LengthLimitingTextInputFormatter(1),
-                      FilteringTextInputFormatter.digitsOnly
+                      FilteringTextInputFormatter.digitsOnly,
                     ],
                     decoration: InputDecoration(
                       hintText: "0",
                       enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                           borderSide: const BorderSide(
-                              color: Colors.deepPurple, width: 2)),
+                              color: Colors.deepPurple, width: 2,),),
                       focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                           borderSide: const BorderSide(
-                              color: Colors.deepPurple, width: 2)),
-                    )),
+                              color: Colors.deepPurple, width: 2,),),
+                    ),),
               ),
               SizedBox(
                 height: 68,
@@ -118,19 +118,19 @@ class _OtpScreenState extends State<OtpScreen> {
                     textAlign: TextAlign.center,
                     inputFormatters: [
                       LengthLimitingTextInputFormatter(1),
-                      FilteringTextInputFormatter.digitsOnly
+                      FilteringTextInputFormatter.digitsOnly,
                     ],
                     decoration: InputDecoration(
                       hintText: "0",
                       enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                           borderSide: const BorderSide(
-                              color: Colors.deepPurple, width: 2)),
+                              color: Colors.deepPurple, width: 2,),),
                       focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                           borderSide: const BorderSide(
-                              color: Colors.deepPurple, width: 2)),
-                    )),
+                              color: Colors.deepPurple, width: 2,),),
+                    ),),
               ),
               SizedBox(
                 height: 68,
@@ -146,19 +146,19 @@ class _OtpScreenState extends State<OtpScreen> {
                     textAlign: TextAlign.center,
                     inputFormatters: [
                       LengthLimitingTextInputFormatter(1),
-                      FilteringTextInputFormatter.digitsOnly
+                      FilteringTextInputFormatter.digitsOnly,
                     ],
                     decoration: InputDecoration(
                       hintText: "0",
                       enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                           borderSide: const BorderSide(
-                              color: Colors.deepPurple, width: 2)),
+                              color: Colors.deepPurple, width: 2,),),
                       focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                           borderSide: const BorderSide(
-                              color: Colors.deepPurple, width: 2)),
-                    )),
+                              color: Colors.deepPurple, width: 2,),),
+                    ),),
               ),
             ],
           ),
@@ -173,7 +173,7 @@ class _OtpScreenState extends State<OtpScreen> {
             shape: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(15),
                 borderSide:
-                    const BorderSide(color: Color.fromRGBO(81, 56, 238, 1))),
+                    const BorderSide(color: Color.fromRGBO(81, 56, 238, 1)),),
             color: const Color.fromRGBO(81, 56, 238, 1),
             minWidth: double.infinity,
             padding: const EdgeInsets.symmetric(vertical: 15),
@@ -182,7 +182,7 @@ class _OtpScreenState extends State<OtpScreen> {
               style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
-                  fontSize: 16.5),
+                  fontSize: 16.5,),
             ),
           ),
         ],

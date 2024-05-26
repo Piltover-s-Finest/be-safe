@@ -71,7 +71,7 @@ class _ForgetPasswordState extends State<NewPassword> {
                   shape: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(15),
                       borderSide: const BorderSide(
-                          color: Color.fromRGBO(81, 56, 238, 1))),
+                          color: Color.fromRGBO(81, 56, 238, 1),),),
                   color: const Color.fromRGBO(81, 56, 238, 1),
                   minWidth: double.infinity,
                   padding: const EdgeInsets.symmetric(vertical: 15),
@@ -80,10 +80,10 @@ class _ForgetPasswordState extends State<NewPassword> {
                     style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
-                        fontSize: 16.5),
+                        fontSize: 16.5,),
                   ),
                 ),
-              ]),
+              ],),
         ),
       ),
     );

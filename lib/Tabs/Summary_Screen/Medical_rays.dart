@@ -39,7 +39,7 @@ class _MedicalRaysState extends State<MedicalRays> {
                     width: 50,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(100),
-                        color: const Color(0xff0077b6)),
+                        color: const Color(0xff0077b6),),
                     child: InkWell(
                         onTap: () async {
                           File? temp = await ImageFunction.galleryPicker();
@@ -48,7 +48,7 @@ class _MedicalRaysState extends State<MedicalRays> {
                           }
                           setState(() {});
                         },
-                        child: const Icon(Icons.photo_library))),
+                        child: const Icon(Icons.photo_library),),),
                 const SizedBox(
                   width: 35,
                 ),
@@ -57,7 +57,7 @@ class _MedicalRaysState extends State<MedicalRays> {
                     width: 50,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(100),
-                        color: const Color(0xff0077b6)),
+                        color: const Color(0xff0077b6),),
                     child: InkWell(
                         onTap: () async {
                           File? temp = await ImageFunction.cameraPicker();
@@ -66,7 +66,7 @@ class _MedicalRaysState extends State<MedicalRays> {
                           }
                           setState(() {});
                         },
-                        child: const Icon(Icons.photo_camera_outlined)))
+                        child: const Icon(Icons.photo_camera_outlined),),),
               ],
             ),
             const SizedBox(
@@ -121,9 +121,9 @@ class _MedicalRaysState extends State<MedicalRays> {
                 prefixIcon: const Icon(Icons.edit_note_sharp),
                 border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(20),
-                    borderSide: const BorderSide(color: Colors.red)),
+                    borderSide: const BorderSide(color: Colors.red),),
                 contentPadding: const EdgeInsets.symmetric(vertical: 25),
-              )),
+              ),),
             ),
             const SizedBox(
               height: 25,
@@ -136,13 +136,13 @@ class _MedicalRaysState extends State<MedicalRays> {
                     onPressed: () {},
                     style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.teal,
-                        padding: const EdgeInsets.symmetric(horizontal: 50)),
+                        padding: const EdgeInsets.symmetric(horizontal: 50),),
                     child: const Text(
                       "Send",
                       style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
-                          color: Colors.white),
+                          color: Colors.white,),
                     ),
                   ),
                 ),
@@ -155,13 +155,13 @@ class _MedicalRaysState extends State<MedicalRays> {
                   },
                   style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.teal,
-                      padding: const EdgeInsets.symmetric(horizontal: 50)),
+                      padding: const EdgeInsets.symmetric(horizontal: 50),),
                   child: const Text(
                     "view",
                     style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
-                        color: Colors.white),
+                        color: Colors.white,),
                   ),
                 ),
               ],

@@ -20,7 +20,7 @@ class QrCodeScreen extends StatelessWidget {
               margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 100),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: const Color(0xff087E8B)),
+                  color: const Color(0xff087E8B),),
               child: Column(
                 children: [
                   Padding(
@@ -54,13 +54,13 @@ class QrCodeScreen extends StatelessWidget {
                       style: TextStyle(
                           color: Colors.white,
                           fontSize: 15,
-                          fontWeight: FontWeight.w700),
+                          fontWeight: FontWeight.w700,),
                     ),
                   ),
                 ],
               ),
             ),
           ],
-        )));
+        ),),);
   }
 }

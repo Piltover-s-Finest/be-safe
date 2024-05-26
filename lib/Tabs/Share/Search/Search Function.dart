@@ -29,7 +29,7 @@ class SearchFunction extends SearchDelegate {
           onPressed: () {
             query = "";
           },
-          icon: const Icon(Icons.close))
+          icon: const Icon(Icons.close),),
     ];
   }
 
@@ -39,7 +39,7 @@ class SearchFunction extends SearchDelegate {
         onPressed: () {
           close(context, null);
         },
-        icon: const Icon(Icons.arrow_back));
+        icon: const Icon(Icons.arrow_back),);
   }
 
   @override
@@ -64,7 +64,7 @@ class SearchFunction extends SearchDelegate {
                 "${username[i]}",
                 style: const TextStyle(fontSize: 18),
               ),
-            )),
+            ),),
           );
         },
       );
@@ -85,7 +85,7 @@ class SearchFunction extends SearchDelegate {
                 "${filterList![i]}",
                 style: const TextStyle(fontSize: 18),
               ),
-            )),
+            ),),
           );
         },
       );

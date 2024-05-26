@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class MedicalMedication extends StatefulWidget {
   static const String routName = "Medical Medication";
 
-  MedicalMedication({super.key});
+  const MedicalMedication({super.key});
 
   @override
   State<MedicalMedication> createState() => _MedicalMedicationState();
@@ -28,7 +28,7 @@ class _MedicalMedicationState extends State<MedicalMedication> {
           children: [
             Center(
                 heightFactor: 1.2,
-                child: Image.asset("assets/images/medication.png")),
+                child: Image.asset("assets/images/medication.png"),),
             const SizedBox(
               height: 1,
             ),
@@ -36,7 +36,7 @@ class _MedicalMedicationState extends State<MedicalMedication> {
                 child: Text(
               "Select Type of Medication",
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-            )),
+            ),),
             const SizedBox(
               height: 30,
             ),
@@ -72,43 +72,43 @@ class _MedicalMedicationState extends State<MedicalMedication> {
                         setState(() {
                           select1 = val!;
                         });
-                      }),
+                      },),
                   const Divider(color: Colors.black, height: 1),
                   RadioListTile(
                       activeColor: Colors.black,
                       title: const Text("Tablet",
-                          style: TextStyle(fontWeight: FontWeight.bold)),
+                          style: TextStyle(fontWeight: FontWeight.bold),),
                       value: 2,
                       groupValue: select1,
                       onChanged: (val) {
                         setState(() {
                           select1 = val!;
                         });
-                      }),
+                      },),
                   const Divider(color: Colors.black, height: 1),
                   RadioListTile(
                       activeColor: Colors.black,
                       title: const Text("Liquid",
-                          style: TextStyle(fontWeight: FontWeight.bold)),
+                          style: TextStyle(fontWeight: FontWeight.bold),),
                       value: 3,
                       groupValue: select1,
                       onChanged: (val) {
                         setState(() {
                           select1 = val!;
                         });
-                      }),
+                      },),
                   const Divider(color: Colors.black, height: 1),
                   RadioListTile(
                       activeColor: Colors.black,
                       title: const Text("Topical",
-                          style: TextStyle(fontWeight: FontWeight.bold)),
+                          style: TextStyle(fontWeight: FontWeight.bold),),
                       value: 4,
                       groupValue: select1,
                       onChanged: (val) {
                         setState(() {
                           select1 = val!;
                         });
-                      }),
+                      },),
                 ],
               ),
             ),
@@ -119,7 +119,7 @@ class _MedicalMedicationState extends State<MedicalMedication> {
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
-                )),
+                ),),
             const SizedBox(
               height: 5,
             ),
@@ -145,151 +145,151 @@ class _MedicalMedicationState extends State<MedicalMedication> {
                         setState(() {
                           select2 = val!;
                         });
-                      }),
+                      },),
                   const Divider(color: Colors.black, height: 1),
                   RadioListTile(
                       activeColor: Colors.black,
                       title: const Text("Inhaler",
-                          style: TextStyle(fontWeight: FontWeight.bold)),
+                          style: TextStyle(fontWeight: FontWeight.bold),),
                       value: 2,
                       groupValue: select2,
                       onChanged: (val) {
                         setState(() {
                           select2 = val!;
                         });
-                      }),
+                      },),
                   const Divider(color: Colors.black, height: 1),
                   RadioListTile(
                       activeColor: Colors.black,
                       title: const Text("Generation",
-                          style: TextStyle(fontWeight: FontWeight.bold)),
+                          style: TextStyle(fontWeight: FontWeight.bold),),
                       value: 3,
                       groupValue: select2,
                       onChanged: (val) {
                         setState(() {
                           select2 = val!;
                         });
-                      }),
+                      },),
                   const Divider(color: Colors.black, height: 1),
                   RadioListTile(
                       activeColor: Colors.black,
                       title: const Text("Injection",
-                          style: TextStyle(fontWeight: FontWeight.bold)),
+                          style: TextStyle(fontWeight: FontWeight.bold),),
                       value: 4,
                       groupValue: select2,
                       onChanged: (val) {
                         setState(() {
                           select2 = val!;
                         });
-                      }),
+                      },),
                   const Divider(color: Colors.black, height: 1),
                   RadioListTile(
                       activeColor: Colors.black,
                       title: const Text("Mouth",
-                          style: TextStyle(fontWeight: FontWeight.bold)),
+                          style: TextStyle(fontWeight: FontWeight.bold),),
                       value: 5,
                       groupValue: select2,
                       onChanged: (val) {
                         setState(() {
                           select2 = val!;
                         });
-                      }),
+                      },),
                   const Divider(color: Colors.black, height: 1),
                   RadioListTile(
                       activeColor: Colors.black,
                       title: const Text("Rush",
-                          style: TextStyle(fontWeight: FontWeight.bold)),
+                          style: TextStyle(fontWeight: FontWeight.bold),),
                       value: 6,
                       groupValue: select2,
                       onChanged: (val) {
                         setState(() {
                           select2 = val!;
                         });
-                      }),
+                      },),
                   const Divider(color: Colors.black, height: 1),
                   RadioListTile(
                       activeColor: Colors.black,
                       title: const Text("Foam",
-                          style: TextStyle(fontWeight: FontWeight.bold)),
+                          style: TextStyle(fontWeight: FontWeight.bold),),
                       value: 7,
                       groupValue: select2,
                       onChanged: (val) {
                         setState(() {
                           select2 = val!;
                         });
-                      }),
+                      },),
                   const Divider(color: Colors.black, height: 1),
                   RadioListTile(
                       activeColor: Colors.black,
                       title: const Text("Lotion",
-                          style: TextStyle(fontWeight: FontWeight.bold)),
+                          style: TextStyle(fontWeight: FontWeight.bold),),
                       value: 8,
                       groupValue: select2,
                       onChanged: (val) {
                         setState(() {
                           select2 = val!;
                         });
-                      }),
+                      },),
                   const Divider(color: Colors.black, height: 1),
                   RadioListTile(
                       activeColor: Colors.black,
                       title: const Text("Drops",
-                          style: TextStyle(fontWeight: FontWeight.bold)),
+                          style: TextStyle(fontWeight: FontWeight.bold),),
                       value: 9,
                       groupValue: select2,
                       onChanged: (val) {
                         setState(() {
                           select2 = val!;
                         });
-                      }),
+                      },),
                   const Divider(color: Colors.black, height: 1),
                   RadioListTile(
                       activeColor: Colors.black,
                       title: const Text("Generous",
-                          style: TextStyle(fontWeight: FontWeight.bold)),
+                          style: TextStyle(fontWeight: FontWeight.bold),),
                       value: 10,
                       groupValue: select2,
                       onChanged: (val) {
                         setState(() {
                           select2 = val!;
                         });
-                      }),
+                      },),
                   const Divider(color: Colors.black, height: 1),
                   RadioListTile(
                       activeColor: Colors.black,
                       title: const Text("Adhesive",
-                          style: TextStyle(fontWeight: FontWeight.bold)),
+                          style: TextStyle(fontWeight: FontWeight.bold),),
                       value: 11,
                       groupValue: select2,
                       onChanged: (val) {
                         setState(() {
                           select2 = val!;
                         });
-                      }),
+                      },),
                   const Divider(color: Colors.black, height: 1),
                   RadioListTile(
                       activeColor: Colors.black,
                       title: const Text("Suppositories",
-                          style: TextStyle(fontWeight: FontWeight.bold)),
+                          style: TextStyle(fontWeight: FontWeight.bold),),
                       value: 12,
                       groupValue: select2,
                       onChanged: (val) {
                         setState(() {
                           select2 = val!;
                         });
-                      }),
+                      },),
                   const Divider(color: Colors.black, height: 1),
                   RadioListTile(
                       activeColor: Colors.black,
                       title: const Text("Powder",
-                          style: TextStyle(fontWeight: FontWeight.bold)),
+                          style: TextStyle(fontWeight: FontWeight.bold),),
                       value: 13,
                       groupValue: select2,
                       onChanged: (val) {
                         setState(() {
                           select2 = val!;
                         });
-                      }),
+                      },),
                 ],
               ),
             ),
@@ -303,7 +303,7 @@ class _MedicalMedicationState extends State<MedicalMedication> {
                     onPressed: () {
                       showErrors();
                       Navigator.pushNamed(
-                          context, AddMedicationConcentration.routeName);
+                          context, AddMedicationConcentration.routeName,);
                       setState(() {});
                     },
                     child: Container(
@@ -311,8 +311,8 @@ class _MedicalMedicationState extends State<MedicalMedication> {
                         child: const Text(
                           "Next",
                           style: TextStyle(
-                              fontWeight: FontWeight.bold, color: Colors.white),
-                        )))),
+                              fontWeight: FontWeight.bold, color: Colors.white,),
+                        ),),),),
           ],
         ),
       ),
@@ -320,10 +320,6 @@ class _MedicalMedicationState extends State<MedicalMedication> {
   }
 
   void showErrors() {
-    if (select1 == null || select2 == null) {
-      showError = true;
-    } else {
-      showError = false;
+    showError = false;
     }
-  }
 }

@@ -38,7 +38,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                   fit: BoxFit.fill,
                   height: 200,
                   width: double.infinity,
-                )),
+                ),),
                 const SizedBox(
                   height: 15,
                 ),
@@ -66,7 +66,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                             icon: Icons.person,
                             keyboardType: TextInputType.name,
                             validator: userNameValidation,
-                            controller: lastName),
+                            controller: lastName,),
                       ),
                     ],
                   ),
@@ -144,7 +144,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                       borderRadius: BorderRadius.circular(15),
                       borderSide: const BorderSide(
                         color: Color(0XFF0b4b62),
-                      )),
+                      ),),
                   color: const Color(0XFF0b4b62),
                   child: const Padding(
                     padding: EdgeInsets.symmetric(horizontal: 100),
@@ -153,14 +153,14 @@ class _PaymentScreenState extends State<PaymentScreen> {
                       style: TextStyle(
                           color: Colors.white,
                           fontSize: 15,
-                          fontWeight: FontWeight.w700),
+                          fontWeight: FontWeight.w700,),
                     ),
                   ),
-                )
+                ),
               ],
             ),
           ),
-        ));
+        ),);
   }
 
   void checkAccount() {

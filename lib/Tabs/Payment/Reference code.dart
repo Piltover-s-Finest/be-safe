@@ -19,7 +19,7 @@ class ReferenceCode extends StatelessWidget {
               child: const Text(
                 "You should go to any market to pay",
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-              )),
+              ),),
           const SizedBox(
             height: 13,
           ),
@@ -33,13 +33,13 @@ class ReferenceCode extends StatelessWidget {
           Container(
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
-                color: Colors.purple.shade400),
+                color: Colors.purple.shade400,),
             padding: const EdgeInsets.symmetric(horizontal: 35),
             child: const Text(
               "2222222",
               style: TextStyle(fontSize: 30, color: Colors.white),
             ),
-          )
+          ),
         ],
       ),
     );

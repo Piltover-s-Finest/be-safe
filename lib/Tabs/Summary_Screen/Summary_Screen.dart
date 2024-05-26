@@ -25,7 +25,7 @@ class SummaryScreen extends StatelessWidget {
               icon: const Icon(
                 Icons.notifications,
                 color: Colors.white,
-              ))
+              ),),
         ],
         title: const Text("Summary"),
       ),
@@ -38,7 +38,7 @@ class SummaryScreen extends StatelessWidget {
               margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: const Color(0xff087E8B)),
+                  color: const Color(0xff087E8B),),
               child: Column(
                 children: [
                   Padding(
@@ -68,7 +68,7 @@ class SummaryScreen extends StatelessWidget {
                   MaterialButton(
                     onPressed: () {
                       Navigator.pushNamed(
-                          context, MedicalInformation.routeName);
+                          context, MedicalInformation.routeName,);
                     },
                     color: const Color(0XFF0b4b62),
                     padding: const EdgeInsets.symmetric(horizontal: 100),
@@ -77,7 +77,7 @@ class SummaryScreen extends StatelessWidget {
                       style: TextStyle(
                           color: Colors.white,
                           fontSize: 15,
-                          fontWeight: FontWeight.w700),
+                          fontWeight: FontWeight.w700,),
                     ),
                   ),
                 ],
@@ -87,7 +87,7 @@ class SummaryScreen extends StatelessWidget {
               margin: const EdgeInsets.symmetric(horizontal: 20),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: const Color(0xff087E8B)),
+                  color: const Color(0xff087E8B),),
               child: Column(
                 children: [
                   Padding(
@@ -126,7 +126,7 @@ class SummaryScreen extends StatelessWidget {
                       style: TextStyle(
                           color: Colors.white,
                           fontSize: 15,
-                          fontWeight: FontWeight.w700),
+                          fontWeight: FontWeight.w700,),
                     ),
                   ),
                 ],
@@ -136,7 +136,7 @@ class SummaryScreen extends StatelessWidget {
               margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: const Color(0xff087E8B)),
+                  color: const Color(0xff087E8B),),
               child: Column(
                 children: [
                   Padding(
@@ -173,7 +173,7 @@ class SummaryScreen extends StatelessWidget {
                       style: TextStyle(
                           color: Colors.white,
                           fontSize: 15,
-                          fontWeight: FontWeight.w700),
+                          fontWeight: FontWeight.w700,),
                     ),
                   ),
                 ],
@@ -183,7 +183,7 @@ class SummaryScreen extends StatelessWidget {
               margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: const Color(0xff087E8B)),
+                  color: const Color(0xff087E8B),),
               child: Column(
                 children: [
                   Padding(
@@ -219,7 +219,7 @@ class SummaryScreen extends StatelessWidget {
                       style: TextStyle(
                           color: Colors.white,
                           fontSize: 15,
-                          fontWeight: FontWeight.w700),
+                          fontWeight: FontWeight.w700,),
                     ),
                   ),
                 ],
@@ -229,7 +229,7 @@ class SummaryScreen extends StatelessWidget {
               margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: const Color(0xff087E8B)),
+                  color: const Color(0xff087E8B),),
               child: Column(
                 children: [
                   Padding(
@@ -265,7 +265,7 @@ class SummaryScreen extends StatelessWidget {
                       style: TextStyle(
                           color: Colors.white,
                           fontSize: 15,
-                          fontWeight: FontWeight.w700),
+                          fontWeight: FontWeight.w700,),
                     ),
                   ),
                 ],

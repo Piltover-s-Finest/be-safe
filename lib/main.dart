@@ -55,7 +55,7 @@ class MyApp extends StatelessWidget {
         MedicalPaper.routName: (context) => const MedicalPaper(),
         MedicalTests.routName: (context) => const MedicalTests(),
         MedicalRays.routName: (context) => const MedicalRays(),
-        MedicalMedication.routName: (context) => MedicalMedication(),
+        MedicalMedication.routName: (context) => const MedicalMedication(),
         AddMedicationConcentration.routeName: (context) =>
             const AddMedicationConcentration(),
         RegisterPayment.routName: (context) => const RegisterPayment(),
@@ -83,7 +83,7 @@ class MyApp extends StatelessWidget {
         MyMedicalPaper.routName: (context) => const MyMedicalPaper(),
         HospitalHomePage.routeName: (context) => const HospitalHomePage(),
         MyProfileHospital.routName: (context) => const MyProfileHospital(),
-        SplashScreen.routName: (context) =>  SplashScreen(),
+        SplashScreen.routName: (context) =>  const SplashScreen(),
 
       },
       theme: MyThemeData.darkTheme,

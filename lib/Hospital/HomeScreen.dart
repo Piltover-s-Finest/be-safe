@@ -24,7 +24,7 @@ class HospitalHomePage extends StatelessWidget {
               margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: const Color(0xff087E8B)),
+                  color: const Color(0xff087E8B),),
               child: Column(
                 children: [
                   const Padding(
@@ -33,7 +33,7 @@ class HospitalHomePage extends StatelessWidget {
                         Icons.person,
                         size: 150,
                         color: Colors.white,
-                      )),
+                      ),),
                   const Text(
                     "My profile",
                     style: TextStyle(
@@ -57,7 +57,7 @@ class HospitalHomePage extends StatelessWidget {
                       style: TextStyle(
                           color: Colors.white,
                           fontSize: 15,
-                          fontWeight: FontWeight.w700),
+                          fontWeight: FontWeight.w700,),
                     ),
                   ),
                 ],
@@ -68,7 +68,7 @@ class HospitalHomePage extends StatelessWidget {
               margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 3),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: const Color(0xff087E8B)),
+                  color: const Color(0xff087E8B),),
               child: Column(
                 children: [
                   Padding(
@@ -102,13 +102,13 @@ class HospitalHomePage extends StatelessWidget {
                       style: TextStyle(
                           color: Colors.white,
                           fontSize: 15,
-                          fontWeight: FontWeight.w700),
+                          fontWeight: FontWeight.w700,),
                     ),
                   ),
                 ],
               ),
             ),
           ],
-        )));
+        ),),);
   }
 }

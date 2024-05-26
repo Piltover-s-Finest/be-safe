@@ -35,7 +35,9 @@ class _RelatedAccountState extends State<RelatedAccount> {
                     hintText: "",
                     label: "Email Person",
                     keyboardType: TextInputType.visiblePassword,
-                    validator: (p0) {},
+                    validator: (p0) {
+                      return null;
+                    },
                     controller: emailPerson,
                   ),
                 ),
@@ -50,7 +52,7 @@ class _RelatedAccountState extends State<RelatedAccount> {
                   shape: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(15),
                       borderSide: const BorderSide(
-                          color: Color.fromRGBO(81, 56, 238, 1))),
+                          color: Color.fromRGBO(81, 56, 238, 1),),),
                   color: const Color.fromRGBO(81, 56, 238, 1),
                   minWidth: double.infinity,
                   padding: const EdgeInsets.symmetric(vertical: 15),
@@ -59,10 +61,10 @@ class _RelatedAccountState extends State<RelatedAccount> {
                     style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
-                        fontSize: 16.5),
+                        fontSize: 16.5,),
                   ),
                 ),
-              ]),
+              ],),
         ),
       ),
     );

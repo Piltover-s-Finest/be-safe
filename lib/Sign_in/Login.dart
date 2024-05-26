@@ -44,7 +44,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           style: TextStyle(
                               color: Colors.black,
                               fontWeight: FontWeight.bold,
-                              fontSize: 30),
+                              fontSize: 30,),
                         ),
                         const SizedBox(
                           height: 10,
@@ -65,14 +65,14 @@ class _LoginScreenState extends State<LoginScreen> {
                                   style: TextStyle(
                                       color: Colors.black,
                                       fontSize: 15,
-                                      fontWeight: FontWeight.bold),
+                                      fontWeight: FontWeight.bold,),
                                 ),
                                 Text(
                                   "*",
                                   style: TextStyle(color: Colors.redAccent),
                                 ),
                               ],
-                            )),
+                            ),),
                         const SizedBox(
                           height: 9,
                         ),
@@ -107,7 +107,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 style: TextStyle(
                                     color: Colors.black,
                                     fontSize: 15,
-                                    fontWeight: FontWeight.bold),
+                                    fontWeight: FontWeight.bold,),
                               ),
                               SizedBox(
                                 width: 3,
@@ -115,8 +115,8 @@ class _LoginScreenState extends State<LoginScreen> {
                               Text(
                                 "*",
                                 style: TextStyle(
-                                    color: Colors.redAccent, fontSize: 15),
-                              )
+                                    color: Colors.redAccent, fontSize: 15,),
+                              ),
                             ],
                           ),
                         ),
@@ -144,14 +144,14 @@ class _LoginScreenState extends State<LoginScreen> {
                                 child: InkWell(
                                     onTap: () {
                                       Navigator.pushNamed(
-                                          context, ForgetPassword.routName);
+                                          context, ForgetPassword.routName,);
                                     },
                                     child: const Text(
                                       "Forget Password",
                                       style: TextStyle(
                                           color:
-                                              Color.fromRGBO(81, 56, 238, 1)),
-                                    )),
+                                              Color.fromRGBO(81, 56, 238, 1),),
+                                    ),),
                               ),
                             ],
                           ),
@@ -163,13 +163,13 @@ class _LoginScreenState extends State<LoginScreen> {
                           onPressed: () {
                             checkAccount();
                             Navigator.pushNamed(
-                                context, HospitalHomePage.routeName);
+                                context, HospitalHomePage.routeName,);
                             setState(() {});
                           },
                           shape: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(15),
                               borderSide: const BorderSide(
-                                  color: Color.fromRGBO(81, 56, 238, 1))),
+                                  color: Color.fromRGBO(81, 56, 238, 1),),),
                           color: const Color.fromRGBO(81, 56, 238, 1),
                           minWidth: double.infinity,
                           padding: const EdgeInsets.symmetric(vertical: 15),
@@ -178,7 +178,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             style: TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold,
-                                fontSize: 16.5),
+                                fontSize: 16.5,),
                           ),
                         ),
                         const SizedBox(
@@ -194,20 +194,20 @@ class _LoginScreenState extends State<LoginScreen> {
                                 InkWell(
                                     onTap: () {
                                       Navigator.pushNamed(
-                                          context, SignUp.routName);
+                                          context, SignUp.routName,);
                                     },
                                     child: const Text(
                                       "Register here",
                                       style: TextStyle(
                                           color:
-                                              Color.fromRGBO(81, 56, 238, 1)),
-                                    ))
+                                              Color.fromRGBO(81, 56, 238, 1),),
+                                    ),),
                               ],
                             ),
                           ),
-                        )
-                      ]),
-                ))));
+                        ),
+                      ],),
+                ),),),);
   }
 
   void checkAccount() {

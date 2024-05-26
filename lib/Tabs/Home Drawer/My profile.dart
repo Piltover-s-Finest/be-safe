@@ -43,7 +43,7 @@ class _MyProfileState extends State<MyProfile> {
                         child: Container(
                           width: 500,
                           margin: const EdgeInsets.only(
-                              left: 120, top: 10, right: 135, bottom: 10),
+                              left: 120, top: 10, right: 135, bottom: 10,),
                           child: CircleAvatar(
                             radius: 75,
                             backgroundColor: Colors.grey[300],
@@ -91,7 +91,7 @@ class _MyProfileState extends State<MyProfile> {
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(15),
-                          )),
+                          ),),
                     ),
                   ),
                   Padding(
@@ -104,14 +104,14 @@ class _MyProfileState extends State<MyProfile> {
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(15),
                           ),
-                          prefixIcon: Icon(Icons.email),
+                          prefixIcon: const Icon(Icons.email),
                           hintText: "Email ",
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(15),
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(15),
-                          )),
+                          ),),
                     ),
                   ),
                   Padding(
@@ -132,7 +132,7 @@ class _MyProfileState extends State<MyProfile> {
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(15),
-                          )),
+                          ),),
                     ),
                   ),
                   Padding(
@@ -152,7 +152,7 @@ class _MyProfileState extends State<MyProfile> {
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(15),
-                          )),
+                          ),),
                     ),
                   ),
                   Padding(
@@ -172,7 +172,7 @@ class _MyProfileState extends State<MyProfile> {
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(15),
-                          )),
+                          ),),
                     ),
                   ),
                   const SizedBox(
@@ -188,10 +188,10 @@ class _MyProfileState extends State<MyProfile> {
                         style: TextStyle(color: Colors.white),
                       ),
                     ),
-                  )
+                  ),
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),
@@ -220,14 +220,14 @@ class _MyProfileState extends State<MyProfile> {
                           icon: const Icon(
                             Icons.camera_alt_outlined,
                             size: 40,
-                          )),
+                          ),),
                       const SizedBox(
                         height: 3,
                       ),
                       const Text(
                         "Camera",
                         style: TextStyle(fontSize: 15),
-                      )
+                      ),
                     ],
                   ),
                   Column(
@@ -245,18 +245,18 @@ class _MyProfileState extends State<MyProfile> {
                           icon: const Icon(
                             Icons.image_outlined,
                             size: 40,
-                          )),
+                          ),),
                       const SizedBox(
                         height: 3,
                       ),
                       const Text(
                         "Gallery",
                         style: TextStyle(fontSize: 15),
-                      )
+                      ),
                     ],
                   ),
                 ],
               ),
-            ));
+            ),);
   }
 }

@@ -75,18 +75,18 @@ class _CompleteInformationState extends State<CompleteInformation> {
                         setState(() {
                           select1 = val!;
                         });
-                      }),
+                      },),
                   RadioListTile(
                       activeColor: Colors.black,
                       title: const Text("NO",
-                          style: TextStyle(fontWeight: FontWeight.bold)),
+                          style: TextStyle(fontWeight: FontWeight.bold),),
                       value: 2,
                       groupValue: select1,
                       onChanged: (val) {
                         setState(() {
                           select1 = val!;
                         });
-                      }),
+                      },),
                   const Divider(color: Colors.black, height: 1),
                   const Padding(
                     padding: EdgeInsets.only(right: 100, top: 10),
@@ -118,14 +118,14 @@ class _CompleteInformationState extends State<CompleteInformation> {
                   RadioListTile(
                       activeColor: Colors.black,
                       title: const Text("NO",
-                          style: TextStyle(fontWeight: FontWeight.bold)),
+                          style: TextStyle(fontWeight: FontWeight.bold),),
                       value: 2,
                       groupValue: select2,
                       onChanged: (val) {
                         setState(() {
                           select2 = val!;
                         });
-                      }),
+                      },),
                   const Divider(color: Colors.black, height: 1),
                   const Padding(
                     padding: EdgeInsets.only(right: 120, top: 10),
@@ -157,14 +157,14 @@ class _CompleteInformationState extends State<CompleteInformation> {
                   RadioListTile(
                       activeColor: Colors.black,
                       title: const Text("NO",
-                          style: TextStyle(fontWeight: FontWeight.bold)),
+                          style: TextStyle(fontWeight: FontWeight.bold),),
                       value: 1,
                       groupValue: select3,
                       onChanged: (val) {
                         setState(() {
                           select3 = val!;
                         });
-                      }),
+                      },),
                   const Divider(color: Colors.black, height: 1),
                   const Padding(
                     padding: EdgeInsets.only(right: 120, top: 10),
@@ -196,14 +196,14 @@ class _CompleteInformationState extends State<CompleteInformation> {
                   RadioListTile(
                       activeColor: Colors.black,
                       title: const Text("NO",
-                          style: TextStyle(fontWeight: FontWeight.bold)),
+                          style: TextStyle(fontWeight: FontWeight.bold),),
                       value: 1,
                       groupValue: select4,
                       onChanged: (val) {
                         setState(() {
                           select4 = val!;
                         });
-                      }),
+                      },),
                   const Divider(color: Colors.black, height: 1),
                   const Padding(
                     padding: EdgeInsets.only(right: 140, top: 10),
@@ -235,14 +235,14 @@ class _CompleteInformationState extends State<CompleteInformation> {
                   RadioListTile(
                       activeColor: Colors.black,
                       title: const Text("NO",
-                          style: TextStyle(fontWeight: FontWeight.bold)),
+                          style: TextStyle(fontWeight: FontWeight.bold),),
                       value: 1,
                       groupValue: select5,
                       onChanged: (val) {
                         setState(() {
                           select5 = val!;
                         });
-                      }),
+                      },),
                   const Divider(color: Colors.black, height: 1),
                   const Padding(
                     padding: EdgeInsets.only(right: 130, top: 10),
@@ -274,14 +274,14 @@ class _CompleteInformationState extends State<CompleteInformation> {
                   RadioListTile(
                       activeColor: Colors.black,
                       title: const Text("NO",
-                          style: TextStyle(fontWeight: FontWeight.bold)),
+                          style: TextStyle(fontWeight: FontWeight.bold),),
                       value: 1,
                       groupValue: select6,
                       onChanged: (val) {
                         setState(() {
                           select6 = val!;
                         });
-                      }),
+                      },),
                   const Divider(color: Colors.black, height: 1),
                   const Padding(
                     padding: EdgeInsets.only(
@@ -314,7 +314,7 @@ class _CompleteInformationState extends State<CompleteInformation> {
                       padding: const EdgeInsets.all(8.0),
                       child: TextField(
                         style: const TextStyle(
-                            color: Colors.black, fontWeight: FontWeight.bold),
+                            color: Colors.black, fontWeight: FontWeight.bold,),
                         cursorColor: Colors.black,
                         cursorRadius: const Radius.circular(16),
                         decoration: InputDecoration(
@@ -330,14 +330,14 @@ class _CompleteInformationState extends State<CompleteInformation> {
                   RadioListTile(
                       activeColor: Colors.black,
                       title: const Text("NO",
-                          style: TextStyle(fontWeight: FontWeight.bold)),
+                          style: TextStyle(fontWeight: FontWeight.bold),),
                       value: Select.no,
                       groupValue: select7,
                       onChanged: (val) {
                         setState(() {
                           select7 = val!;
                         });
-                      }),
+                      },),
                   const Divider(color: Colors.black, height: 1),
                   const Padding(
                     padding: EdgeInsets.only(right: 100, top: 10),
@@ -369,80 +369,80 @@ class _CompleteInformationState extends State<CompleteInformation> {
                   RadioListTile(
                       activeColor: Colors.black,
                       title: const Text("A-",
-                          style: TextStyle(fontWeight: FontWeight.bold)),
+                          style: TextStyle(fontWeight: FontWeight.bold),),
                       value: 1,
                       groupValue: select8,
                       onChanged: (val) {
                         setState(() {
                           select8 = val!;
                         });
-                      }),
+                      },),
                   RadioListTile(
                       activeColor: Colors.black,
                       title: const Text("B+",
-                          style: TextStyle(fontWeight: FontWeight.bold)),
+                          style: TextStyle(fontWeight: FontWeight.bold),),
                       value: 3,
                       groupValue: select8,
                       onChanged: (val) {
                         setState(() {
                           select8 = val!;
                         });
-                      }),
+                      },),
                   RadioListTile(
                       activeColor: Colors.black,
                       title: const Text("B-",
-                          style: TextStyle(fontWeight: FontWeight.bold)),
+                          style: TextStyle(fontWeight: FontWeight.bold),),
                       value: 4,
                       groupValue: select8,
                       onChanged: (val) {
                         setState(() {
                           select8 = val!;
                         });
-                      }),
+                      },),
                   RadioListTile(
                       activeColor: Colors.black,
                       title: const Text("O+",
-                          style: TextStyle(fontWeight: FontWeight.bold)),
+                          style: TextStyle(fontWeight: FontWeight.bold),),
                       value: 5,
                       groupValue: select8,
                       onChanged: (val) {
                         setState(() {
                           select8 = val!;
                         });
-                      }),
+                      },),
                   RadioListTile(
                       activeColor: Colors.black,
                       title: const Text("O-",
-                          style: TextStyle(fontWeight: FontWeight.bold)),
+                          style: TextStyle(fontWeight: FontWeight.bold),),
                       value: 6,
                       groupValue: select8,
                       onChanged: (val) {
                         setState(() {
                           select8 = val!;
                         });
-                      }),
+                      },),
                   RadioListTile(
                       activeColor: Colors.black,
                       title: const Text("AB+",
-                          style: TextStyle(fontWeight: FontWeight.bold)),
+                          style: TextStyle(fontWeight: FontWeight.bold),),
                       value: 7,
                       groupValue: select8,
                       onChanged: (val) {
                         setState(() {
                           select8 = val!;
                         });
-                      }),
+                      },),
                   RadioListTile(
                       activeColor: Colors.black, //2B2B2BFF,
                       title: const Text("AB-",
-                          style: TextStyle(fontWeight: FontWeight.bold)),
+                          style: TextStyle(fontWeight: FontWeight.bold),),
                       value: 8,
                       groupValue: select8,
                       onChanged: (val) {
                         setState(() {
                           select8 = val!;
                         });
-                      }),
+                      },),
                 ],
               ),
             ),
@@ -457,10 +457,10 @@ class _CompleteInformationState extends State<CompleteInformation> {
                   style: TextStyle(
                       color: Colors.white,
                       fontSize: 15,
-                      fontWeight: FontWeight.bold),
+                      fontWeight: FontWeight.bold,),
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),

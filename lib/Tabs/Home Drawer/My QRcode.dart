@@ -53,7 +53,7 @@ class _MyQRCodeState extends State<MyQRCode> {
                       border: OutlineInputBorder(
                           borderSide: BorderSide(
                         color: Colors.blue,
-                      ))),
+                      ),),),
                 ),
               ),
             ),
@@ -75,7 +75,7 @@ class _MyQRCodeState extends State<MyQRCode> {
                       border: OutlineInputBorder(
                           borderSide: BorderSide(
                         color: Colors.blue,
-                      ))),
+                      ),),),
                 ),
               ),
             ),
@@ -93,10 +93,10 @@ class _MyQRCodeState extends State<MyQRCode> {
                   style: TextStyle(
                       color: Colors.white,
                       fontSize: 15,
-                      fontWeight: FontWeight.bold),
+                      fontWeight: FontWeight.bold,),
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),

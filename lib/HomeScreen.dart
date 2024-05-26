@@ -34,13 +34,13 @@ class _HomePageState extends State<HomePage> {
         },
         items: const [
           BottomNavigationBarItem(
-              icon: Icon(Icons.heart_broken_sharp), label: "Summary"),
+              icon: Icon(Icons.heart_broken_sharp), label: "Summary",),
           BottomNavigationBarItem(icon: Icon(Icons.person_2), label: "share"),
           BottomNavigationBarItem(
-              icon: Icon(Icons.qr_code_rounded), label: "Qr code"),
+              icon: Icon(Icons.qr_code_rounded), label: "Qr code",),
           BottomNavigationBarItem(icon: Icon(Icons.location_on), label: "Map"),
           BottomNavigationBarItem(
-              icon: Icon(Icons.payments_rounded), label: "payment"),
+              icon: Icon(Icons.payments_rounded), label: "payment",),
         ],
       ),
       body: tabs[index],
@@ -50,8 +50,8 @@ class _HomePageState extends State<HomePage> {
   List<Widget> tabs = [
     SummaryScreen(),
     const ShareScreen(),
-    QrCodeScreen(),
+    const QrCodeScreen(),
     const MapScreen(),
-    const PaymentScreen()
+    const PaymentScreen(),
   ];
 }

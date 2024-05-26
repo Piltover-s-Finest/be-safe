@@ -58,7 +58,7 @@ class _MapPageState extends State<MapPage> {
               color: Colors.blue,
               size: 56,
             ),
-          )),
-        ));
+          ),),
+        ),);
   }
 }

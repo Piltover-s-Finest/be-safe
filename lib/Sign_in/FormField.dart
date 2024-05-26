@@ -40,7 +40,7 @@ class PersonTextFormField extends StatelessWidget {
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(20),
-          )),
+          ),),
     );
   }
 }

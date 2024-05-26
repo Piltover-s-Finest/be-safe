@@ -30,7 +30,7 @@ class _ScanQrCodeState extends State<ScanPatientQrCode> {
                 child: Text(
               qrcode,
               style: const TextStyle(color: Colors.blue, fontSize: 30),
-            )),
+            ),),
           ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 50),
@@ -38,7 +38,7 @@ class _ScanQrCodeState extends State<ScanPatientQrCode> {
               margin: const EdgeInsets.all(20),
               child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0XFF0b4b62)),
+                      backgroundColor: const Color(0XFF0b4b62),),
                   onPressed: () {
                     scanQr();
                   },
@@ -49,9 +49,9 @@ class _ScanQrCodeState extends State<ScanPatientQrCode> {
                       style: TextStyle(
                           color: Colors.white,
                           fontSize: 20,
-                          fontWeight: FontWeight.bold),
+                          fontWeight: FontWeight.bold,),
                     ),
-                  )),
+                  ),),
             ),
           ),
         ],

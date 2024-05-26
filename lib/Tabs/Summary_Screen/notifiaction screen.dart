@@ -61,7 +61,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
                             Text(
                               "2h Ago",
                               style: TextStyle(fontSize: 12),
-                            )
+                            ),
                           ],
                         ),
                         subtitle: const Text(
@@ -69,15 +69,15 @@ class _NotificationScreenState extends State<NotificationScreen> {
                           maxLines: 2,
                           overflow: TextOverflow.ellipsis,
                         ),
-                      ));
+                      ),);
                 },
                 separatorBuilder: (context, index) => Divider(
                       color: Colors.grey[400],
                       indent: size.width * .08,
                       endIndent: size.width * .08,
                     ),
-                itemCount: 10),
-          )
+                itemCount: 10,),
+          ),
         ],
       ),
     );

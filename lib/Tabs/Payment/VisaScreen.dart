@@ -82,7 +82,7 @@ class _VisaScreenState extends State<VisaScreen> {
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(15),
-                          )),
+                          ),),
                     ),
                   ),
                   const SizedBox(
@@ -104,7 +104,7 @@ class _VisaScreenState extends State<VisaScreen> {
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(15),
-                          )),
+                          ),),
                     ),
                   ),
                   const SizedBox(
@@ -128,7 +128,7 @@ class _VisaScreenState extends State<VisaScreen> {
                                 ),
                                 focusedBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(15),
-                                )),
+                                ),),
                             keyboardType: TextInputType.number,
                           ),
                         ),
@@ -149,7 +149,7 @@ class _VisaScreenState extends State<VisaScreen> {
                                 ),
                                 focusedBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(15),
-                                )),
+                                ),),
                             keyboardType: TextInputType.number,
                           ),
                         ),
@@ -175,7 +175,7 @@ class _VisaScreenState extends State<VisaScreen> {
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(15),
-                          )),
+                          ),),
                     ),
                   ),
                   const SizedBox(
@@ -191,7 +191,7 @@ class _VisaScreenState extends State<VisaScreen> {
                         style: TextStyle(color: Colors.white),
                       ),
                     ),
-                  )
+                  ),
                 ],
               ),
             ), ////2B2B2BFF

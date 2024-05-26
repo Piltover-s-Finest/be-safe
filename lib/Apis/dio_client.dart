@@ -8,8 +8,8 @@ class DioClient {
     String url, {
     Options? options,
     Map<String, dynamic>? queryParameters,
-  }) async =>
-      await _dio.get(
+  }) =>
+      _dio.get(
         url,
         options: options,
         queryParameters: queryParameters,
@@ -20,8 +20,8 @@ class DioClient {
     Options? options,
     Map<String, dynamic>? queryParameters,
     dynamic data,
-  }) async =>
-      await _dio.post(
+  }) =>
+      _dio.post(
         url,
         data: data,
         options: options,
@@ -32,8 +32,8 @@ class DioClient {
     String url, {
     Options? options,
     Map<String, dynamic>? queryParameters,
-  }) async =>
-      await _dio.delete(
+  }) =>
+      _dio.delete(
         url,
         options: options,
         queryParameters: queryParameters,
@@ -44,8 +44,8 @@ class DioClient {
     Options? options,
     Map<String, dynamic>? queryParameters,
     dynamic data,
-  }) async =>
-      await _dio.put(
+  }) =>
+      _dio.put(
         url,
         data: data,
       );
