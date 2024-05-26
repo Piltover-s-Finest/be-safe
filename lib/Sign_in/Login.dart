@@ -235,22 +235,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   void checkAccount() {
     if (formKey.currentState?.validate() == true) {
-      try {
-        final repo = repoSignal.value;
-        final response = repo.login(email, password);
-        if (response != null) {
-          Navigator.pushNamed(
-            context,
-            HospitalHomePage.routeName,
-          );
-        }
-      } on ApiException catch (e) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text(e.message),
-          ),
-        );
-      }
+      // add code to login here
     }
   }
 }
