@@ -1,6 +1,7 @@
 import 'package:be_safe3/Sign_in/new%20password.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:pinput/pinput.dart';
 
 class OtpScreen extends StatefulWidget {
   const OtpScreen({super.key});
@@ -11,211 +12,84 @@ class OtpScreen extends StatefulWidget {
 }
 
 class _OtpScreenState extends State<OtpScreen> {
+  final defaultPinputTheme = PinTheme(
+    width: 56,
+    height: 60,
+    textStyle: const TextStyle(
+      fontSize: 16,
+      color: Colors.black,
+    ),
+    decoration: BoxDecoration(
+        color: Colors.green.shade100,
+        borderRadius: const BorderRadius.all(
+          Radius.circular(8),
+        ),
+        border: Border.all(color: Colors.transparent)),
+  );
+
   @override
   Widget build(BuildContext context) {
+    final pinController = TextEditingController();
     return Scaffold(
       appBar: AppBar(
-        title: const Center(child: Text("Otp Screen")),
-      ),
-      body: Column(
-        children: [
-          const SizedBox(
-            height: 30,
-          ),
-          Container(
-            padding: const EdgeInsets.all(10),
-            child: const Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  "Verification code",
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 23,
-                  ),
-                ),
-                Text(
-                  "We have sent the code verification to gmail",
-                  style: TextStyle(fontWeight: FontWeight.normal, fontSize: 14),
-                ),
-              ],
+          automaticallyImplyLeading: false,
+          centerTitle: true,
+          title: const Text('OTP screen')),
+      body: Center(
+        child: Column(
+          children: [
+            const SizedBox(
+              height: 30,
             ),
-          ),
-          const SizedBox(
-            height: 15,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              SizedBox(
-                height: 68,
-                width: 64,
-                child: TextField(
-                  onChanged: (value) {
-                    if (value.length == 1) {
-                      FocusScope.of(context).nextFocus();
-                    }
-                  },
-                  style: Theme.of(context).textTheme.headlineMedium,
-                  keyboardType: TextInputType.number,
-                  textAlign: TextAlign.center,
-                  inputFormatters: [
-                    LengthLimitingTextInputFormatter(1),
-                    FilteringTextInputFormatter.digitsOnly,
-                  ],
-                  decoration: InputDecoration(
-                    hintText: "0",
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: const BorderSide(
-                        color: Colors.deepPurple,
-                        width: 2,
-                      ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: const BorderSide(
-                        color: Colors.deepPurple,
-                        width: 2,
-                      ),
+            Container(
+              padding: const EdgeInsets.all(10),
+              child: const Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(
+                    "Verification code",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 23,
                     ),
                   ),
-                ),
-              ),
-              SizedBox(
-                height: 68,
-                width: 64,
-                child: TextField(
-                  onChanged: (value) {
-                    if (value.length == 1) {
-                      FocusScope.of(context).nextFocus();
-                    }
-                  },
-                  style: Theme.of(context).textTheme.headlineMedium,
-                  keyboardType: TextInputType.number,
-                  textAlign: TextAlign.center,
-                  inputFormatters: [
-                    LengthLimitingTextInputFormatter(1),
-                    FilteringTextInputFormatter.digitsOnly,
-                  ],
-                  decoration: InputDecoration(
-                    hintText: "0",
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: const BorderSide(
-                        color: Colors.deepPurple,
-                        width: 2,
-                      ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: const BorderSide(
-                        color: Colors.deepPurple,
-                        width: 2,
-                      ),
-                    ),
+                  Text(
+                    "We have sent the code verification to your gmail",
+                    style: TextStyle(
+                        fontWeight: FontWeight.normal,
+                        fontSize: 14,
+                        color: Colors.grey),
                   ),
-                ),
-              ),
-              SizedBox(
-                height: 68,
-                width: 64,
-                child: TextField(
-                  onChanged: (value) {
-                    if (value.length == 1) {
-                      FocusScope.of(context).nextFocus();
-                    }
-                  },
-                  style: Theme.of(context).textTheme.headlineMedium,
-                  keyboardType: TextInputType.number,
-                  textAlign: TextAlign.center,
-                  inputFormatters: [
-                    LengthLimitingTextInputFormatter(1),
-                    FilteringTextInputFormatter.digitsOnly,
-                  ],
-                  decoration: InputDecoration(
-                    hintText: "0",
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: const BorderSide(
-                        color: Colors.deepPurple,
-                        width: 2,
-                      ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: const BorderSide(
-                        color: Colors.deepPurple,
-                        width: 2,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 68,
-                width: 64,
-                child: TextField(
-                  onChanged: (value) {
-                    if (value.length == 1) {
-                      FocusScope.of(context).nextFocus();
-                    }
-                  },
-                  style: Theme.of(context).textTheme.headlineMedium,
-                  keyboardType: TextInputType.number,
-                  textAlign: TextAlign.center,
-                  inputFormatters: [
-                    LengthLimitingTextInputFormatter(1),
-                    FilteringTextInputFormatter.digitsOnly,
-                  ],
-                  decoration: InputDecoration(
-                    hintText: "0",
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: const BorderSide(
-                        color: Colors.deepPurple,
-                        width: 2,
-                      ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: const BorderSide(
-                        color: Colors.deepPurple,
-                        width: 2,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(
-            height: 80,
-          ),
-          MaterialButton(
-            onPressed: () {
-              Navigator.pushNamed(context, NewPassword.routName);
-              setState(() {});
-            },
-            shape: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(15),
-              borderSide:
-                  const BorderSide(color: Color.fromRGBO(81, 56, 238, 1)),
-            ),
-            color: const Color.fromRGBO(81, 56, 238, 1),
-            minWidth: double.infinity,
-            padding: const EdgeInsets.symmetric(vertical: 15),
-            child: const Text(
-              "Confirm",
-              style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-                fontSize: 16.5,
+                ],
               ),
             ),
-          ),
-        ],
+            const SizedBox(
+              height: 15,
+            ),
+            Pinput(
+              controller: pinController,
+              length: 4,
+              defaultPinTheme: defaultPinputTheme,
+              focusedPinTheme: defaultPinputTheme.copyWith(
+                decoration: defaultPinputTheme.decoration!.copyWith(
+                  border: Border.all(color: Colors.green),
+                ),
+              ),
+              onCompleted: (pin) => debugPrint("pin is: $pin"),
+            ),
+            const SizedBox(height: 60),
+            SizedBox(
+              child: FilledButton(
+                style: FilledButton.styleFrom(backgroundColor: Colors.green),
+                child: const Text(
+                  'Confirm', //style: TextStyle(color:Colors.green.shade400 ),
+                ),
+                onPressed: () {},
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
