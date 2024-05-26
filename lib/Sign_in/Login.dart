@@ -1,8 +1,13 @@
+import 'package:be_safe3/Apis/dio_client.dart';
+import 'package:be_safe3/Apis/exceptions.dart';
+import 'package:be_safe3/Apis/repository.dart';
 import 'package:be_safe3/Hospital/HomeScreen.dart';
 import 'package:be_safe3/Sign_in/FormField.dart';
 import 'package:be_safe3/Sign_in/Sign_up.dart';
 import 'package:be_safe3/Sign_in/forgetpassword.dart';
 import 'package:be_safe3/Sign_in/validation.dart';
+import 'package:be_safe3/signals/api_signals.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -229,8 +234,23 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   void checkAccount() {
-    if (formKey.currentState?.validate() == false) {
-      return;
+    if (formKey.currentState?.validate() == true) {
+      try {
+        final repo = repoSignal.value;
+        final response = repo.login(email, password);
+        if (response != null) {
+          Navigator.pushNamed(
+            context,
+            HospitalHomePage.routeName,
+          );
+        }
+      } on ApiException catch (e) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(e.message),
+          ),
+        );
+      }
     }
   }
 }
