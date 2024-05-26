@@ -48,12 +48,14 @@ class _MyQRCodeState extends State<MyQRCode> {
                     });
                   },
                   decoration: const InputDecoration(
-                      hintText: "your ID",
-                      fillColor: Colors.deepOrange,
-                      border: OutlineInputBorder(
-                          borderSide: BorderSide(
+                    hintText: "your ID",
+                    fillColor: Colors.deepOrange,
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide(
                         color: Colors.blue,
-                      ))),
+                      ),
+                    ),
+                  ),
                 ),
               ),
             ),
@@ -70,12 +72,14 @@ class _MyQRCodeState extends State<MyQRCode> {
                     });
                   },
                   decoration: const InputDecoration(
-                      hintText: "your Email",
-                      fillColor: Colors.deepOrange,
-                      border: OutlineInputBorder(
-                          borderSide: BorderSide(
+                    hintText: "your Email",
+                    fillColor: Colors.deepOrange,
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide(
                         color: Colors.blue,
-                      ))),
+                      ),
+                    ),
+                  ),
                 ),
               ),
             ),
@@ -91,12 +95,13 @@ class _MyQRCodeState extends State<MyQRCode> {
                 child: const Text(
                   "Save",
                   style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 15,
-                      fontWeight: FontWeight.bold),
+                    color: Colors.white,
+                    fontSize: 15,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),

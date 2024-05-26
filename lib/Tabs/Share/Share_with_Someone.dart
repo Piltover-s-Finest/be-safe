@@ -1,6 +1,4 @@
 import 'package:be_safe3/Tabs/Share/Search/Search%20Function.dart';
-import 'package:be_safe3/Tabs/Share/Search/SearchScreen.dart';
-import 'package:be_safe3/Tabs/Share/information%20person.dart';
 import 'package:flutter/material.dart';
 
 class ShareWithSomeone extends StatefulWidget {
@@ -15,30 +13,32 @@ class _ShareWithSomeoneState extends State<ShareWithSomeone> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text(
-            "Share with Someone",
-            style: TextStyle(color: Colors.white),
-          ),
-          backgroundColor: Colors.teal,
+      appBar: AppBar(
+        title: const Text(
+          "Share with Someone",
+          style: TextStyle(color: Colors.white),
         ),
-        body: SingleChildScrollView(
-            child: Column(
+        backgroundColor: Colors.teal,
+      ),
+      body: SingleChildScrollView(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Container(
               margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 150),
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: const Color(0xff087E8B)),
+                borderRadius: BorderRadius.circular(10),
+                color: const Color(0xff087E8B),
+              ),
               child: Column(
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(5),
                     child: Image.asset(
-                        "assets/images/Search_person-removebg-preview.png",
-                        height: 170),
+                      "assets/images/Search_person-removebg-preview.png",
+                      height: 170,
+                    ),
                   ),
                   const Text(
                     "Search Responsible Person",
@@ -79,15 +79,18 @@ class _ShareWithSomeoneState extends State<ShareWithSomeone> {
                     child: const Text(
                       "Search",
                       style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 15,
-                          fontWeight: FontWeight.w700),
+                        color: Colors.white,
+                        fontSize: 15,
+                        fontWeight: FontWeight.w700,
+                      ),
                     ),
                   ),
                 ],
               ),
             ),
           ],
-        )));
+        ),
+      ),
+    );
   }
 }

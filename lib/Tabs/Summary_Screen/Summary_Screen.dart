@@ -19,13 +19,14 @@ class SummaryScreen extends StatelessWidget {
       appBar: AppBar(
         actions: [
           IconButton(
-              onPressed: () {
-                Navigator.pushNamed(context, NotificationScreen.routName);
-              },
-              icon: const Icon(
-                Icons.notifications,
-                color: Colors.white,
-              ))
+            onPressed: () {
+              Navigator.pushNamed(context, NotificationScreen.routName);
+            },
+            icon: const Icon(
+              Icons.notifications,
+              color: Colors.white,
+            ),
+          ),
         ],
         title: const Text("Summary"),
       ),
@@ -37,8 +38,9 @@ class SummaryScreen extends StatelessWidget {
             Container(
               margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: const Color(0xff087E8B)),
+                borderRadius: BorderRadius.circular(10),
+                color: const Color(0xff087E8B),
+              ),
               child: Column(
                 children: [
                   Padding(
@@ -68,16 +70,19 @@ class SummaryScreen extends StatelessWidget {
                   MaterialButton(
                     onPressed: () {
                       Navigator.pushNamed(
-                          context, MedicalInformation.routeName);
+                        context,
+                        MedicalInformation.routeName,
+                      );
                     },
                     color: const Color(0XFF0b4b62),
                     padding: const EdgeInsets.symmetric(horizontal: 100),
                     child: const Text(
                       "Get Start",
                       style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 15,
-                          fontWeight: FontWeight.w700),
+                        color: Colors.white,
+                        fontSize: 15,
+                        fontWeight: FontWeight.w700,
+                      ),
                     ),
                   ),
                 ],
@@ -86,8 +91,9 @@ class SummaryScreen extends StatelessWidget {
             Container(
               margin: const EdgeInsets.symmetric(horizontal: 20),
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: const Color(0xff087E8B)),
+                borderRadius: BorderRadius.circular(10),
+                color: const Color(0xff087E8B),
+              ),
               child: Column(
                 children: [
                   Padding(
@@ -124,9 +130,10 @@ class SummaryScreen extends StatelessWidget {
                     child: const Text(
                       "Add medication",
                       style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 15,
-                          fontWeight: FontWeight.w700),
+                        color: Colors.white,
+                        fontSize: 15,
+                        fontWeight: FontWeight.w700,
+                      ),
                     ),
                   ),
                 ],
@@ -135,8 +142,9 @@ class SummaryScreen extends StatelessWidget {
             Container(
               margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: const Color(0xff087E8B)),
+                borderRadius: BorderRadius.circular(10),
+                color: const Color(0xff087E8B),
+              ),
               child: Column(
                 children: [
                   Padding(
@@ -171,9 +179,10 @@ class SummaryScreen extends StatelessWidget {
                     child: const Text(
                       "Add Rays",
                       style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 15,
-                          fontWeight: FontWeight.w700),
+                        color: Colors.white,
+                        fontSize: 15,
+                        fontWeight: FontWeight.w700,
+                      ),
                     ),
                   ),
                 ],
@@ -182,8 +191,9 @@ class SummaryScreen extends StatelessWidget {
             Container(
               margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: const Color(0xff087E8B)),
+                borderRadius: BorderRadius.circular(10),
+                color: const Color(0xff087E8B),
+              ),
               child: Column(
                 children: [
                   Padding(
@@ -217,9 +227,10 @@ class SummaryScreen extends StatelessWidget {
                     child: const Text(
                       "Add Tests",
                       style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 15,
-                          fontWeight: FontWeight.w700),
+                        color: Colors.white,
+                        fontSize: 15,
+                        fontWeight: FontWeight.w700,
+                      ),
                     ),
                   ),
                 ],
@@ -228,8 +239,9 @@ class SummaryScreen extends StatelessWidget {
             Container(
               margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: const Color(0xff087E8B)),
+                borderRadius: BorderRadius.circular(10),
+                color: const Color(0xff087E8B),
+              ),
               child: Column(
                 children: [
                   Padding(
@@ -263,9 +275,10 @@ class SummaryScreen extends StatelessWidget {
                     child: const Text(
                       "Add Medical Paper",
                       style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 15,
-                          fontWeight: FontWeight.w700),
+                        color: Colors.white,
+                        fontSize: 15,
+                        fontWeight: FontWeight.w700,
+                      ),
                     ),
                   ),
                 ],
