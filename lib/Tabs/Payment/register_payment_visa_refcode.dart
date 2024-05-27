@@ -20,8 +20,9 @@ class RegisterPayment extends StatelessWidget {
             Container(
               margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: const Color(0xff087E8B)),
+                borderRadius: BorderRadius.circular(10),
+                color: const Color(0xff087E8B),
+              ),
               child: Column(
                 children: [
                   Padding(
@@ -52,9 +53,10 @@ class RegisterPayment extends StatelessWidget {
                     child: const Text(
                       "Get Code",
                       style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 15,
-                          fontWeight: FontWeight.w700),
+                        color: Colors.white,
+                        fontSize: 15,
+                        fontWeight: FontWeight.w700,
+                      ),
                     ),
                   ),
                 ],
@@ -63,8 +65,9 @@ class RegisterPayment extends StatelessWidget {
             Container(
               margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: const Color(0xff087E8B)),
+                borderRadius: BorderRadius.circular(10),
+                color: const Color(0xff087E8B),
+              ),
               child: Column(
                 children: [
                   Padding(
@@ -95,9 +98,10 @@ class RegisterPayment extends StatelessWidget {
                     child: const Text(
                       "Get Start",
                       style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 15,
-                          fontWeight: FontWeight.w700),
+                        color: Colors.white,
+                        fontSize: 15,
+                        fontWeight: FontWeight.w700,
+                      ),
                     ),
                   ),
                 ],

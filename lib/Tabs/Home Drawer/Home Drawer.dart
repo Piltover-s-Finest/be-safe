@@ -20,16 +20,18 @@ class HomeDrawer extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Container(
-              alignment: Alignment.center,
-              padding: const EdgeInsets.symmetric(vertical: 55),
-              color: const Color(0xff52B788),
-              child: const Text(
-                "Be Safe Settings",
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 21,
-                    fontWeight: FontWeight.bold),
-              )),
+            alignment: Alignment.center,
+            padding: const EdgeInsets.symmetric(vertical: 55),
+            color: const Color(0xff52B788),
+            child: const Text(
+              "Be Safe Settings",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 21,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
           Padding(
             padding: const EdgeInsets.all(10),
             child: InkWell(
@@ -46,7 +48,7 @@ class HomeDrawer extends StatelessWidget {
                   Text(
                     "My profile",
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
-                  )
+                  ),
                 ],
               ),
             ),
@@ -70,7 +72,7 @@ class HomeDrawer extends StatelessWidget {
                   Text(
                     "Related Account",
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
-                  )
+                  ),
                 ],
               ),
             ),
@@ -93,7 +95,7 @@ class HomeDrawer extends StatelessWidget {
                   Text(
                     "My QR",
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
-                  )
+                  ),
                 ],
               ),
             ),
@@ -116,7 +118,7 @@ class HomeDrawer extends StatelessWidget {
                   Text(
                     "My Rays",
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
-                  )
+                  ),
                 ],
               ),
             ),
@@ -139,7 +141,7 @@ class HomeDrawer extends StatelessWidget {
                   Text(
                     "My Tests",
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
-                  )
+                  ),
                 ],
               ),
             ),
@@ -162,7 +164,7 @@ class HomeDrawer extends StatelessWidget {
                   Text(
                     "My Medical paper",
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
-                  )
+                  ),
                 ],
               ),
             ),
@@ -185,7 +187,7 @@ class HomeDrawer extends StatelessWidget {
                   Text(
                     "My Medications",
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
-                  )
+                  ),
                 ],
               ),
             ),

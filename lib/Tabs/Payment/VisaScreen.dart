@@ -71,18 +71,19 @@ class _VisaScreenState extends State<VisaScreen> {
                     child: TextFormField(
                       keyboardType: TextInputType.number,
                       decoration: InputDecoration(
-                          filled: true,
-                          fillColor: Colors.white,
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(15),
-                          ),
-                          hintText: "Card Number",
-                          enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(15),
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(15),
-                          )),
+                        filled: true,
+                        fillColor: Colors.white,
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        hintText: "Card Number",
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                      ),
                     ),
                   ),
                   const SizedBox(
@@ -93,18 +94,19 @@ class _VisaScreenState extends State<VisaScreen> {
                     child: TextFormField(
                       keyboardType: TextInputType.name,
                       decoration: InputDecoration(
-                          filled: true,
-                          fillColor: Colors.white,
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(15),
-                          ),
-                          hintText: "Card Holder Name",
-                          enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(15),
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(15),
-                          )),
+                        filled: true,
+                        fillColor: Colors.white,
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        hintText: "Card Holder Name",
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                      ),
                     ),
                   ),
                   const SizedBox(
@@ -117,18 +119,19 @@ class _VisaScreenState extends State<VisaScreen> {
                         Expanded(
                           child: TextFormField(
                             decoration: InputDecoration(
-                                filled: true,
-                                fillColor: Colors.white,
-                                border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(15),
-                                ),
-                                hintText: "Exp.Month",
-                                enabledBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(15),
-                                ),
-                                focusedBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(15),
-                                )),
+                              filled: true,
+                              fillColor: Colors.white,
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(15),
+                              ),
+                              hintText: "Exp.Month",
+                              enabledBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(15),
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(15),
+                              ),
+                            ),
                             keyboardType: TextInputType.number,
                           ),
                         ),
@@ -138,18 +141,19 @@ class _VisaScreenState extends State<VisaScreen> {
                         Expanded(
                           child: TextFormField(
                             decoration: InputDecoration(
-                                filled: true,
-                                fillColor: Colors.white,
-                                border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(15),
-                                ),
-                                hintText: "Exp.Year",
-                                enabledBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(15),
-                                ),
-                                focusedBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(15),
-                                )),
+                              filled: true,
+                              fillColor: Colors.white,
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(15),
+                              ),
+                              hintText: "Exp.Year",
+                              enabledBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(15),
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(15),
+                              ),
+                            ),
                             keyboardType: TextInputType.number,
                           ),
                         ),
@@ -164,18 +168,19 @@ class _VisaScreenState extends State<VisaScreen> {
                     child: TextFormField(
                       keyboardType: TextInputType.number,
                       decoration: InputDecoration(
-                          filled: true,
-                          fillColor: Colors.white,
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(15),
-                          ),
-                          hintText: "CCV",
-                          enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(15),
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(15),
-                          )),
+                        filled: true,
+                        fillColor: Colors.white,
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        hintText: "CCV",
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                      ),
                     ),
                   ),
                   const SizedBox(
@@ -191,7 +196,7 @@ class _VisaScreenState extends State<VisaScreen> {
                         style: TextStyle(color: Colors.white),
                       ),
                     ),
-                  )
+                  ),
                 ],
               ),
             ), ////2B2B2BFF

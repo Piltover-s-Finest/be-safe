@@ -27,20 +27,21 @@ class PersonTextFormField extends StatelessWidget {
       controller: controller,
       keyboardType: keyboardType,
       decoration: InputDecoration(
-          filled: true,
-          fillColor: Colors.white,
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(15),
-          ),
-          label: Text(label),
-          hintText: hintText,
-          prefixIcon: Icon(icon),
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10),
-          ),
-          focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(20),
-          )),
+        filled: true,
+        fillColor: Colors.white,
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(15),
+        ),
+        label: Text(label),
+        hintText: hintText,
+        prefixIcon: Icon(icon),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(20),
+        ),
+      ),
     );
   }
 }

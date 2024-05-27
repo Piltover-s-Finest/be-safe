@@ -29,14 +29,18 @@ class _AddMedicationConcentrationState
               height: 1,
             ),
             const Center(
-                child: Text("Add Medication Concentration",
-                    style:
-                        TextStyle(fontSize: 18, fontWeight: FontWeight.bold))),
+              child: Text(
+                "Add Medication Concentration",
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ),
+            ),
             const SizedBox(
               height: 30,
             ),
-            const Text("   Power",
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+            const Text(
+              "   Power",
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
             const SizedBox(height: 3),
             Container(
               margin: const EdgeInsets.all(5),
@@ -56,8 +60,10 @@ class _AddMedicationConcentrationState
             const SizedBox(
               height: 16,
             ),
-            const Text("  Choose a unit",
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+            const Text(
+              "  Choose a unit",
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
             const SizedBox(
               height: 5,
             ),
@@ -72,66 +78,79 @@ class _AddMedicationConcentrationState
               child: Column(
                 children: [
                   RadioListTile(
-                      activeColor: Colors.black,
-                      title: const Text(
-                        "amalgam",
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                      value: 1,
-                      groupValue: select3,
-                      onChanged: (val) {
-                        setState(() {
-                          select3 = val!;
-                        });
-                      }),
+                    activeColor: Colors.black,
+                    title: const Text(
+                      "amalgam",
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    value: 1,
+                    groupValue: select3,
+                    onChanged: (val) {
+                      setState(() {
+                        select3 = val!;
+                      });
+                    },
+                  ),
                   const Divider(color: Colors.black, height: 1),
                   RadioListTile(
-                      activeColor: Colors.black,
-                      title: const Text("micrograms",
-                          style: TextStyle(fontWeight: FontWeight.bold)),
-                      value: 2,
-                      groupValue: select3,
-                      onChanged: (val) {
-                        setState(() {
-                          select3 = val!;
-                        });
-                      }),
+                    activeColor: Colors.black,
+                    title: const Text(
+                      "micrograms",
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    value: 2,
+                    groupValue: select3,
+                    onChanged: (val) {
+                      setState(() {
+                        select3 = val!;
+                      });
+                    },
+                  ),
                   const Divider(color: Colors.black, height: 1),
                   RadioListTile(
-                      activeColor: Colors.black,
-                      title: const Text("g",
-                          style: TextStyle(fontWeight: FontWeight.bold)),
-                      value: 3,
-                      groupValue: select3,
-                      onChanged: (val) {
-                        setState(() {
-                          select3 = val!;
-                        });
-                      }),
+                    activeColor: Colors.black,
+                    title: const Text(
+                      "g",
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    value: 3,
+                    groupValue: select3,
+                    onChanged: (val) {
+                      setState(() {
+                        select3 = val!;
+                      });
+                    },
+                  ),
                   const Divider(color: Colors.black, height: 1),
                   RadioListTile(
-                      activeColor: Colors.black,
-                      title: const Text("ml",
-                          style: TextStyle(fontWeight: FontWeight.bold)),
-                      value: 4,
-                      groupValue: select3,
-                      onChanged: (val) {
-                        setState(() {
-                          select3 = val!;
-                        });
-                      }),
+                    activeColor: Colors.black,
+                    title: const Text(
+                      "ml",
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    value: 4,
+                    groupValue: select3,
+                    onChanged: (val) {
+                      setState(() {
+                        select3 = val!;
+                      });
+                    },
+                  ),
                   const Divider(color: Colors.black, height: 1),
                   RadioListTile(
-                      activeColor: Colors.black,
-                      title: const Text("%",
-                          style: TextStyle(fontWeight: FontWeight.bold)),
-                      value: 5,
-                      groupValue: select3,
-                      onChanged: (val) {
-                        setState(() {
-                          select3 = val!;
-                        });
-                      }),
+                    activeColor: Colors.black,
+                    title: const Text(
+                      "%",
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    value: 5,
+                    groupValue: select3,
+                    onChanged: (val) {
+                      setState(() {
+                        select3 = val!;
+                      });
+                    },
+                  ),
                 ],
               ),
             ),
@@ -143,18 +162,22 @@ class _AddMedicationConcentrationState
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 15),
                   child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.teal),
-                      onPressed: () {},
-                      child: Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 30),
-                          child: const Text(
-                            "Save",
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
-                                fontSize: 18),
-                          ))),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.teal,
+                    ),
+                    onPressed: () {},
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 30),
+                      child: const Text(
+                        "Save",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                          fontSize: 18,
+                        ),
+                      ),
+                    ),
+                  ),
                 ),
                 const SizedBox(
                   width: 60,
@@ -164,18 +187,20 @@ class _AddMedicationConcentrationState
                     Navigator.pushNamed(context, MyMedications.routName);
                   },
                   style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.teal,
-                      padding: const EdgeInsets.symmetric(horizontal: 50)),
+                    backgroundColor: Colors.teal,
+                    padding: const EdgeInsets.symmetric(horizontal: 50),
+                  ),
                   child: const Text(
                     "view",
                     style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white),
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
               ],
-            )
+            ),
           ],
         ),
       ),
