@@ -1,7 +1,11 @@
+import 'package:be_safe3/Apis/exceptions.dart';
 import 'package:be_safe3/Sign_in/Login.dart';
 
 import 'package:be_safe3/Sign_in/validation.dart';
+import 'package:be_safe3/signals/api_signals.dart';
 import 'package:flutter/material.dart';
+import 'package:qr_flutter/qr_flutter.dart';
+import 'package:queen_validators/queen_validators.dart';
 
 import 'FormField.dart';
 import '../HomeScreen.dart';
@@ -12,14 +16,15 @@ class SignUp extends StatefulWidget {
   static const String routName = 'SignUp';
 
   @override
-  State<SignUp> createState() => _SignUpState();
+  State<SignUp> createState() => SignUpState();
 }
 
-class _SignUpState extends State<SignUp> {
-  TextEditingController username = TextEditingController();
-  TextEditingController phone = TextEditingController();
-  TextEditingController email = TextEditingController();
-  TextEditingController password = TextEditingController();
+class SignUpState extends State<SignUp> {
+  TextEditingController nameTxtController = TextEditingController();
+  TextEditingController phoneTxtController = TextEditingController();
+  TextEditingController emailTxtController = TextEditingController();
+  TextEditingController passwordTxtController = TextEditingController();
+  TextEditingController addressTxtController = TextEditingController();
 
   var formKey = GlobalKey<FormState>();
   @override
@@ -83,8 +88,12 @@ class _SignUpState extends State<SignUp> {
                   hintText: "",
                   label: "Enter Your name ",
                   keyboardType: TextInputType.name,
-                  validator: userNameValidation,
-                  controller: username,
+                  validator: qValidator([
+                    IsRequired("Please enter your name"),
+                    MinLength(3, "Name should be more than 3 charcters"),
+                    MaxLength(50, "Name should be less than 50 charcters"),
+                  ]),
+                  controller: nameTxtController,
                 ),
                 const SizedBox(
                   height: 30,
@@ -117,13 +126,11 @@ class _SignUpState extends State<SignUp> {
                   label: "Enter Your phone",
                   keyboardType: TextInputType.phone,
                   maxLength: 11,
-                  validator: (val) {
-                    if (phone.text.length != 11) {
-                      return "please Enter valid mobile number";
-                    }
-                    return null;
-                  },
-                  controller: phone,
+                  validator: qValidator([
+                    IsRequired("Please enter your phone number"),
+                    IsEgyptianPhone("Please enter a valid phone number"),
+                  ]),
+                  controller: phoneTxtController,
                 ),
                 const SizedBox(
                   height: 30,
@@ -155,16 +162,46 @@ class _SignUpState extends State<SignUp> {
                   hintText: "",
                   label: "Enter Your mail address",
                   keyboardType: TextInputType.emailAddress,
-                  validator: (text) {
-                    if (text == null || text.trim().isEmpty) {
-                      return "please Enter the email";
-                    }
-                    if (!emailValidation(text)) {
-                      return "bad format";
-                    }
-                    return null;
-                  },
-                  controller: email,
+                  validator: qValidator([
+                    IsRequired("Please enter your email"),
+                    const IsEmail("Please enter a valid email address"),
+                  ]),
+                  controller: emailTxtController,
+                ),
+                const SizedBox(
+                  height: 30,
+                ),
+                Container(
+                  margin: const EdgeInsets.symmetric(horizontal: 6),
+                  child: const Row(
+                    children: [
+                      Text(
+                        "Address",
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Text(
+                        "*",
+                        style: TextStyle(color: Colors.redAccent),
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(
+                  height: 9,
+                ),
+                PersonTextFormField(
+                  icon: Icons.location_on,
+                  hintText: "",
+                  label: "Enter Your address",
+                  validator: qValidator([
+                    IsRequired("Please enter your address"),
+                    MinLength(10, "Address should be more than 10 charcters"),
+                  ]),
+                  controller: addressTxtController,
                 ),
                 const SizedBox(
                   height: 30,
@@ -198,12 +235,21 @@ class _SignUpState extends State<SignUp> {
                   height: 9,
                 ),
                 PersonTextFormField(
-                  icon: Icons.remove_red_eye,
+                  isHide: true,
+                  icon: Icons.lock,
                   hintText: "",
                   label: "Enter Your Password",
                   keyboardType: TextInputType.visiblePassword,
-                  validator: passwordValidation,
-                  controller: password,
+                  validator: qValidator([
+                    IsRequired("Please enter your password"),
+                    MinLength(6, "Password should be more than 6 charcters"),
+                    MaxLength(50, "Password should be less than 50 charcters"),
+                    RegExpRule(
+                        RegExp(
+                            r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$'),
+                        "Password should contain uppercase letter, \n lowercase letter,  numbers and  special charcter"),
+                  ]),
+                  controller: passwordTxtController,
                 ),
                 const SizedBox(
                   height: 15,
@@ -212,11 +258,31 @@ class _SignUpState extends State<SignUp> {
                   height: 10,
                 ),
                 MaterialButton(
-                  onPressed: () {
-                    checkAccount();
-                    Navigator.pushNamed(context, HomePage.routName);
-
-                    setState(() {});
+                  onPressed: () async {
+                    if (formKey.currentState?.validate() == true) {
+                      try {
+                        await repoSignal.value.register(
+                          email: emailTxtController.text,
+                          name: nameTxtController.text,
+                          phoneNumber: phoneTxtController.text,
+                          password: passwordTxtController.text,
+                          address: addressTxtController.text,
+                        );
+                        if (!context.mounted) return;
+                        Navigator.of(context).pushNamedAndRemoveUntil(
+                          HomePage.routName,
+                          (Route<dynamic> route) => false,
+                        );
+                      } on ApiException catch (e) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              content: Text(e.message),
+                              backgroundColor: Colors.redAccent,
+                              duration: const Duration(seconds: 2),
+                            ),
+                          );
+                      }
+                    }
                   },
                   shape: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(15),

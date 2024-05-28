@@ -21,6 +21,26 @@ class MainRepository {
     });
   }
 
+  Future<void> register(
+      {required String email,
+      required String name,
+      required String phoneNumber,
+      required String password,
+      required String address}) async {
+    return _errorWrapper(() async {
+      final response = await _client.post(
+        '/account/registerPatient',
+        data: {
+          'name': name,
+          'email': email,
+          'password': password,
+          'phoneNumber': phoneNumber,
+          'address': address,
+        },
+      );
+    });
+  }
+
   Future<T> _errorWrapper<T>(
     Future<T> Function() request, {
     Future<T> Function(DioException e)? onError,
