@@ -1,5 +1,6 @@
 import 'package:be_safe3/Apis/exceptions.dart';
 import 'package:be_safe3/Sign_in/Login.dart';
+import 'package:be_safe3/Sign_in/otp%20screen.dart';
 
 import 'package:be_safe3/Sign_in/validation.dart';
 import 'package:be_safe3/signals/api_signals.dart';
@@ -270,7 +271,7 @@ class SignUpState extends State<SignUp> {
                         );
                         if (!context.mounted) return;
                         Navigator.of(context).pushNamedAndRemoveUntil(
-                          HomePage.routName,
+                          OtpScreen.routName,
                           (Route<dynamic> route) => false,
                         );
                       } on ApiException catch (e) {
