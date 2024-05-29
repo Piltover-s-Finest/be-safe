@@ -237,7 +237,7 @@ class _LoginScreenState extends State<LoginScreen> {
     if (formKey.currentState?.validate() == true) {
       try {
         final repo = repoSignal.value;
-        final response = repo.login(email, password);
+        final response = repo.login("email", "password");
         if (response != null) {
           Navigator.pushNamed(
             context,
