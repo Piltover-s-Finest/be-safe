@@ -32,11 +32,16 @@ import 'package:be_safe3/Tabs/Summary_Screen/medical%20paper.dart';
 import 'package:be_safe3/Tabs/Summary_Screen/medical_tests.dart';
 import 'package:be_safe3/Tabs/Payment/register_payment_visa_refcode.dart';
 import 'package:be_safe3/Tabs/Summary_Screen/notifiaction%20screen.dart';
+import 'package:be_safe3/signals/prefs_signal.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'Tabs/map/mapScreen.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  final sharedPref = await SharedPreferences.getInstance();
+  prefsSignal.overrideWith(sharedPref);
   runApp(const MyApp());
 }
 
