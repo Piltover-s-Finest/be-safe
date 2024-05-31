@@ -88,19 +88,23 @@ class _LoginScreenState extends State<LoginScreen> {
                   hintText: "",
                   label: "Enter Your mail address",
                   keyboardType: TextInputType.emailAddress,
-                  validator: (text) {
-                    setState(() {});
-                    if (text == null || text.trim().isEmpty) {
-                      return "please Enter the email";
-                    }
-                    setState(() {});
-                    if (!emailValidation(text)) {
-                      return "bad format";
-                    }
-                    setState(() {});
-                    return null;
-                  },
-                  controller: email,
+                  validator: qValidator([
+                    IsRequired("Please enter your email"),
+                    const IsEmail("Please enter a valid email"),
+                  ]),
+                  // (text) {
+                  //   setState(() {});
+                  //   if (text == null || text.trim().isEmpty) {
+                  //     return "please Enter the email";
+                  //   }
+                  //   setState(() {});
+                  //   if (!emailValidation(text)) {
+                  //     return "bad format";
+                  //   }
+                  //   setState(() {});
+                  //   return null;
+                  // },
+                  controller: emailController,
                 ),
                 const SizedBox(
                   height: 30,
@@ -134,6 +138,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   height: 9,
                 ),
                 PersonTextFormField(
+                  isHide: false,
                   icon: Icons.remove_red_eye,
                   hintText: "",
                   label: "Enter Your Password",
