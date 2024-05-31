@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:be_safe3/Apis/exceptions.dart';
 import 'package:be_safe3/Hospital/HomeScreen.dart';
 import 'package:be_safe3/Sign_in/FormField.dart';
@@ -19,11 +21,11 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  TextEditingController email = TextEditingController();
+  final email = TextEditingController();
 
-  TextEditingController password = TextEditingController();
+  final password = TextEditingController();
 
-  var formKey = GlobalKey<FormState>();
+  final formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -172,10 +174,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   height: 20,
                 ),
                 MaterialButton(
-                  onPressed: () {
-                    checkAccount();
-                    //setState(() {});
-                  },
+                  onPressed: checkAccount,
                   shape: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(15),
                     borderSide: const BorderSide(
@@ -230,11 +229,13 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
-  void checkAccount() async {
+  Future<void> checkAccount() async {
+    log('${email.text} | ${password.text}');
+
     if (formKey.currentState?.validate() == true) {
       try {
         final repo = repoSignal.value;
-        await repo.login("email", "password");
+        await repo.login(email.text, password.text);
 
         while (Navigator.of(context).canPop()) {
           Navigator.pop(context);

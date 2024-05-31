@@ -13,7 +13,7 @@ class MainRepository {
       final response = await _client.post(
         '/account/login',
         data: {
-          'email': email,
+          'emailOrPhoneNumber': email,
           'password': password,
         },
       );
