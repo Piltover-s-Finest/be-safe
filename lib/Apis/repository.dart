@@ -9,18 +9,16 @@ class MainRepository {
   MainRepository(this._client);
 
   Future<UserModel> login(String email, String password) async {
-    return _errorWrapper(
-      () async {
-        final response = await _client.post(
-          '/account/login',
-          data: {
-            'emailOrPhoneNumber': email,
-            'password': password,
-          },
-        );
-        return UserModel.fromJson(response.data);
-      },
-    );
+    return _errorWrapper(() async {
+      final response = await _client.post(
+        '/account/login',
+        data: {
+          'emailOrPhoneNumber': email,
+          'password': password,
+        },
+      );
+      return UserModel.fromJson(response.data);
+    });
   }
 
   Future<void> register(

@@ -1,13 +1,13 @@
-import 'package:be_safe3/Apis/dio_client.dart';
+import 'dart:developer';
+
 import 'package:be_safe3/Apis/exceptions.dart';
-import 'package:be_safe3/Apis/repository.dart';
 import 'package:be_safe3/Hospital/HomeScreen.dart';
 import 'package:be_safe3/Sign_in/FormField.dart';
 import 'package:be_safe3/Sign_in/Sign_up.dart';
 import 'package:be_safe3/Sign_in/forgetpassword.dart';
 import 'package:be_safe3/Sign_in/validation.dart';
+import 'package:be_safe3/Tabs/Summary_Screen/Summary_Screen.dart';
 import 'package:be_safe3/signals/api_signals.dart';
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:queen_validators/queen_validators.dart';
 
@@ -21,11 +21,11 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  TextEditingController emailController = TextEditingController();
+  final email = TextEditingController();
 
-  TextEditingController passwordController = TextEditingController();
+  final password = TextEditingController();
 
-  var formKey = GlobalKey<FormState>();
+  final formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -104,7 +104,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   //   setState(() {});
                   //   return null;
                   // },
-                  controller: emailController,
+                  controller: email,
                 ),
                 const SizedBox(
                   height: 30,
@@ -145,9 +145,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   keyboardType: TextInputType.visiblePassword,
                   validator: qValidator([
                     IsRequired(),
-                    MinLength(6, "Please enter a valid password"),
                   ]),
-                  controller: passwordController,
+                  controller: password,
                 ),
                 const SizedBox(
                   height: 10,
@@ -180,15 +179,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   height: 20,
                 ),
                 MaterialButton(
-                  onPressed: () {
-                    setState(() {
-                      checkAccount();
-                    });
-                    // Navigator.pushNamed(
-                    //   context,
-                    //   HospitalHomePage.routeName,
-                    // );
-                  },
+                  onPressed: checkAccount,
                   shape: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(15),
                     borderSide: const BorderSide(
@@ -243,18 +234,21 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
-  void checkAccount() {
+  Future<void> checkAccount() async {
+    log('${email.text} | ${password.text}');
+
     if (formKey.currentState?.validate() == true) {
       try {
         final repo = repoSignal.value;
-        final response =
-            repo.login(emailController.text, passwordController.text);
-        // if (response != null) {
-        //   Navigator.pushNamed(
-        //     context,
-        //     HospitalHomePage.routeName,
-        //   );
-        // }
+        await repo.login(email.text, password.text);
+
+        while (Navigator.of(context).canPop()) {
+          Navigator.pop(context);
+        }
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => SummaryScreen()),
+        );
       } on ApiException catch (e) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
