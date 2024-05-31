@@ -8,6 +8,6 @@ final _dio = Dio(
     baseUrl: 'http://minamagdy-001-site1.ktempurl.com/api',
     validateStatus: (status) => status! < 400,
   ),
-);
+)..interceptors.add(LogInterceptor(responseBody: true));
 
 final repoSignal = signal(MainRepository(DioClient(_dio)));

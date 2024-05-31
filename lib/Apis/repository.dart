@@ -21,14 +21,15 @@ class MainRepository {
     });
   }
 
-  Future<void> register(
-      {required String email,
-      required String name,
-      required String phoneNumber,
-      required String password,
-      required String address}) async {
+  Future<void> register({
+    required String email,
+    required String name,
+    required String phoneNumber,
+    required String password,
+    required String address,
+  }) async {
     return _errorWrapper(() async {
-      final response = await _client.post(
+      await _client.post(
         '/account/registerPatient',
         data: {
           'name': name,
@@ -36,6 +37,54 @@ class MainRepository {
           'password': password,
           'phoneNumber': phoneNumber,
           'address': address,
+        },
+      );
+    });
+  }
+
+  Future<void> sendResetPasswordOTP(String email) async {
+    return _errorWrapper(() async {
+      await _client.post(
+        '/account/sendEmailResetPassword',
+        data: {'email': email},
+      );
+    });
+  }
+
+  Future<void> sendEmailVerification(String email) async {
+    return _errorWrapper(() async {
+      await _client.post(
+        '/account/sendEmailVerification',
+        data: {'email': email},
+      );
+    });
+  }
+
+  Future<UserModel> verifyEmail(String email, String otp) async {
+    return _errorWrapper(() async {
+      final response = await _client.post(
+        '/account/verifyEmail',
+        data: {
+          'email': email,
+          'otp': otp,
+        },
+      );
+      return UserModel.fromJson(response.data);
+    });
+  }
+
+  Future<void> resetPassword(
+    String email,
+    String password,
+    String otp,
+  ) async {
+    return _errorWrapper(() async {
+      await _client.post(
+        '/account/resetPassword',
+        data: {
+          'email': email,
+          'password': password,
+          'otp': otp,
         },
       );
     });
@@ -56,10 +105,12 @@ class MainRepository {
           throw ValidationException(
             e.response?.data['message'] ?? 'Validation error',
             List<String>.from(e.response?.data['errors'] ?? []),
+            e.response?.statusCode,
           );
         } else {
           throw ServerException(
             e.response?.data['message'] ?? 'Server error',
+            e.response?.statusCode,
           );
         }
       }
