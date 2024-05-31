@@ -104,7 +104,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   //   setState(() {});
                   //   return null;
                   // },
-                  controller: emailController,
+                  controller: email,
                 ),
                 const SizedBox(
                   height: 30,
