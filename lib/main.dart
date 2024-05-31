@@ -70,7 +70,7 @@ class MyApp extends StatelessWidget {
         // InformationPerson.routeName:(context) => const InformationPerson(),
         ForgetPassword.routName: (context) => const ForgetPassword(),
         NewPassword.routName: (context) => const NewPassword(),
-        OtpScreen.routName: (context) => const OtpScreen(),
+        // OtpScreen.routName: (context) => const OtpScreen(),
         //OtpScreenSignup.routName:(context) => const OtpScreenSignup(),
         MyProfile.routName: (context) => const MyProfile(),
         RelatedAccount.routName: (context) => const RelatedAccount(),

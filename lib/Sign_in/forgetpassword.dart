@@ -1,5 +1,10 @@
+import 'dart:developer';
+
+import 'package:be_safe3/Apis/exceptions.dart';
 import 'package:be_safe3/Sign_in/otp%20screen.dart';
+import 'package:be_safe3/signals/api_signals.dart';
 import 'package:flutter/material.dart';
+import 'package:queen_validators/queen_validators.dart';
 
 import 'FormField.dart';
 
@@ -36,15 +41,10 @@ class _ForgetPasswordState extends State<ForgetPassword> {
                   hintText: "",
                   label: "Enter Your mail address",
                   keyboardType: TextInputType.emailAddress,
-                  validator: (text) {
-                    setState(() {});
-                    if (text == null || text.trim().isEmpty) {
-                      return "please Enter the email";
-                    }
-                    setState(() {});
-                    setState(() {});
-                    return null;
-                  },
+                  validator: qValidator([
+                    IsRequired("Your email is required"),
+                    const IsEmail("Invalid email address"),
+                  ]),
                   controller: email,
                 ),
               ),
@@ -54,8 +54,8 @@ class _ForgetPasswordState extends State<ForgetPassword> {
               MaterialButton(
                 onPressed: () {
                   checkAccount();
-                  Navigator.pushNamed(context, OtpScreen.routName);
-                  setState(() {});
+                  // Navigator.pushNamed(context, OtpScreen.routName);
+                  // setState(() {});
                 },
                 shape: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(15),
@@ -82,9 +82,59 @@ class _ForgetPasswordState extends State<ForgetPassword> {
     );
   }
 
-  void checkAccount() {
-    if (formKey.currentState?.validate() == false) {
-      return;
+  Future<void> checkAccount() async {
+    if (formKey.currentState?.validate() == true) {
+      final repo = repoSignal.value;
+      try {
+        await repo.sendResetPasswordOTP(email.text);
+
+        if (!mounted) return;
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => OtpScreen(
+              email: email.text,
+              isForgetPassword: true,
+            ),
+          ),
+        );
+      } on ApiException catch (e) {
+        if (e.code == 409 && e.message.contains('unconfirmed')) {
+          return _handleNotVerified();
+        }
+        if (!mounted) return;
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text(e.message)),
+        );
+      }
+    }
+  }
+
+  Future<void> _handleNotVerified() async {
+    log('Not verified');
+    final repo = repoSignal.value;
+    try {
+      await repo.sendEmailVerification(email.text);
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content:
+              Text('Your account is not verified, we sent you a new email\n'
+                  'Please verify your email and try again'),
+        ),
+      );
+      // push to otp screen
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => OtpScreen(email: email.text),
+        ),
+      );
+    } on ApiException catch (e) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(e.message)),
+      );
     }
   }
 }

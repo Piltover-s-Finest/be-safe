@@ -1,10 +1,17 @@
-import 'package:be_safe3/Sign_in/new%20password.dart';
+import 'package:be_safe3/Apis/exceptions.dart';
+import 'package:be_safe3/signals/api_signals.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:pinput/pinput.dart';
+import 'package:queen_validators/queen_validators.dart';
 
 class OtpScreen extends StatefulWidget {
-  const OtpScreen({super.key});
+  final String email;
+  final bool isForgetPassword;
+  const OtpScreen({
+    super.key,
+    required this.email,
+    this.isForgetPassword = false,
+  });
   static const String routName = 'Otp Screen';
 
   @override
@@ -12,6 +19,9 @@ class OtpScreen extends StatefulWidget {
 }
 
 class _OtpScreenState extends State<OtpScreen> {
+  final repo = repoSignal.value;
+  final pinController = TextEditingController();
+  final passController = TextEditingController();
   final defaultPinputTheme = PinTheme(
     width: 56,
     height: 60,
@@ -20,75 +30,154 @@ class _OtpScreenState extends State<OtpScreen> {
       color: Colors.black,
     ),
     decoration: BoxDecoration(
-        color: Colors.green.shade100,
-        borderRadius: const BorderRadius.all(
-          Radius.circular(8),
-        ),
-        border: Border.all(color: Colors.transparent)),
+      color: Colors.green.shade100,
+      borderRadius: const BorderRadius.all(
+        Radius.circular(8),
+      ),
+      border: Border.all(color: Colors.transparent),
+    ),
   );
+  final _formKey = GlobalKey<FormState>();
+
+  Future<void> _handleCTA() async {
+    if (widget.isForgetPassword) {
+      if (_formKey.currentState?.validate() == false) return;
+      try {
+        await repo.resetPassword(
+          widget.email,
+          passController.text,
+          pinController.text,
+        );
+        if (!mounted) return;
+        Navigator.pushNamed(context, '/home');
+        return;
+      } on ApiException catch (e) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text(e.message)),
+        );
+        return;
+      }
+    }
+    try {
+      await repo.verifyEmail(widget.email, pinController.text);
+      if (!mounted) return;
+      Navigator.pushNamed(context, '/home');
+    } on ApiException catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(e.message)),
+      );
+    }
+  }
+
+  Future<void> _handleResendCode() async {
+    if (widget.isForgetPassword) {
+      await repo.sendResetPasswordOTP(widget.email);
+    } else {
+      await repo.sendEmailVerification(widget.email);
+    }
+    if (!mounted) return;
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(content: Text('Code sent successfully')),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
-    final pinController = TextEditingController();
     return Scaffold(
       appBar: AppBar(
-          automaticallyImplyLeading: false,
-          centerTitle: true,
-          title: const Text('OTP screen')),
+        automaticallyImplyLeading: false,
+        centerTitle: true,
+        title: const Text('OTP screen'),
+      ),
       body: Center(
-        child: Column(
-          children: [
-            const SizedBox(
-              height: 30,
-            ),
-            Container(
-              padding: const EdgeInsets.all(10),
-              child: const Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Text(
-                    "Verification code",
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 23,
+        child: Form(
+          key: _formKey,
+          child: Column(
+            children: [
+              const SizedBox(
+                height: 30,
+              ),
+              Container(
+                padding: const EdgeInsets.all(10),
+                child: const Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Verification code",
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 23,
+                      ),
                     ),
-                  ),
-                  Text(
-                    "We have sent the code verification to your gmail",
-                    style: TextStyle(
+                    Text(
+                      "We have sent the code verification to your gmail",
+                      style: TextStyle(
                         fontWeight: FontWeight.normal,
                         fontSize: 14,
-                        color: Colors.grey),
+                        color: Colors.grey,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 15),
+              Pinput(
+                validator: qValidator([
+                  IsRequired("Please enter the verification code"),
+                ]),
+                controller: pinController,
+                length: 4,
+                defaultPinTheme: defaultPinputTheme,
+                focusedPinTheme: defaultPinputTheme.copyWith(
+                  decoration: defaultPinputTheme.decoration!.copyWith(
+                    border: Border.all(color: Colors.green),
                   ),
-                ],
-              ),
-            ),
-            const SizedBox(
-              height: 15,
-            ),
-            Pinput(
-              controller: pinController,
-              length: 4,
-              defaultPinTheme: defaultPinputTheme,
-              focusedPinTheme: defaultPinputTheme.copyWith(
-                decoration: defaultPinputTheme.decoration!.copyWith(
-                  border: Border.all(color: Colors.green),
                 ),
+                onCompleted: widget.isForgetPassword
+                    ? null
+                    : (pin) =>
+                        repo.verifyEmail(widget.email, pinController.text),
               ),
-              onCompleted: (pin) => debugPrint("pin is: $pin"),
-            ),
-            const SizedBox(height: 60),
-            SizedBox(
-              child: FilledButton(
+              const SizedBox(height: 8),
+              TextButton(
+                style: TextButton.styleFrom(foregroundColor: Colors.green),
+                onPressed: _handleResendCode,
+                child: const Text('Resend code'),
+              ),
+              const SizedBox(height: 30),
+              if (widget.isForgetPassword)
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  child: TextFormField(
+                    controller: passController,
+                    validator: qValidator([
+                      IsRequired("Please enter your password"),
+                      MinLength(6, "Password should be more than 6 charcters"),
+                      MaxLength(
+                          50, "Password should be less than 50 charcters"),
+                      RegExpRule(
+                        RegExp(
+                          r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$',
+                        ),
+                        "Password should contain uppercase letter,\nlowercase letter, numbers and  special charcter",
+                      ),
+                    ]),
+                    decoration: const InputDecoration(
+                      labelText: 'New password',
+                      border: OutlineInputBorder(),
+                    ),
+                    obscureText: true,
+                  ),
+                ),
+              const SizedBox(height: 30),
+              FilledButton(
                 style: FilledButton.styleFrom(backgroundColor: Colors.green),
-                child: const Text(
-                  'Confirm', //style: TextStyle(color:Colors.green.shade400 ),
-                ),
-                onPressed: () {},
+                onPressed: _handleCTA,
+                child: const Text('Confirm'),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
