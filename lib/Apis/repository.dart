@@ -11,7 +11,7 @@ class MainRepository {
   Future<UserModel> login(String email, String password) async {
     return _errorWrapper(() async {
       final response = await _client.post(
-        '/login',
+        '/account/login',
         data: {
           'email': email,
           'password': password,

@@ -1,14 +1,13 @@
-import 'package:be_safe3/Apis/dio_client.dart';
 import 'package:be_safe3/Apis/exceptions.dart';
-import 'package:be_safe3/Apis/repository.dart';
 import 'package:be_safe3/Hospital/HomeScreen.dart';
 import 'package:be_safe3/Sign_in/FormField.dart';
 import 'package:be_safe3/Sign_in/Sign_up.dart';
 import 'package:be_safe3/Sign_in/forgetpassword.dart';
 import 'package:be_safe3/Sign_in/validation.dart';
+import 'package:be_safe3/Tabs/Summary_Screen/Summary_Screen.dart';
 import 'package:be_safe3/signals/api_signals.dart';
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:queen_validators/queen_validators.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -137,7 +136,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   hintText: "",
                   label: "Enter Your Password",
                   keyboardType: TextInputType.visiblePassword,
-                  validator: passwordValidation,
+                  validator: qValidator([
+                    IsRequired(),
+                  ]),
                   controller: password,
                 ),
                 const SizedBox(
@@ -173,11 +174,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 MaterialButton(
                   onPressed: () {
                     checkAccount();
-                    Navigator.pushNamed(
-                      context,
-                      HospitalHomePage.routeName,
-                    );
-                    setState(() {});
+                    //setState(() {});
                   },
                   shape: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(15),
@@ -233,17 +230,19 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
-  void checkAccount() {
+  void checkAccount() async {
     if (formKey.currentState?.validate() == true) {
       try {
         final repo = repoSignal.value;
-        final response = repo.login("email", "password");
-        if (response != null) {
-          Navigator.pushNamed(
-            context,
-            HospitalHomePage.routeName,
-          );
+        await repo.login("email", "password");
+
+        while (Navigator.of(context).canPop()) {
+          Navigator.pop(context);
         }
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => SummaryScreen()),
+        );
       } on ApiException catch (e) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
