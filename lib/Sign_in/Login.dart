@@ -9,6 +9,7 @@ import 'package:be_safe3/Sign_in/validation.dart';
 import 'package:be_safe3/signals/api_signals.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:queen_validators/queen_validators.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -20,9 +21,9 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  TextEditingController email = TextEditingController();
+  TextEditingController emailController = TextEditingController();
 
-  TextEditingController password = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
 
   var formKey = GlobalKey<FormState>();
 
@@ -87,19 +88,23 @@ class _LoginScreenState extends State<LoginScreen> {
                   hintText: "",
                   label: "Enter Your mail address",
                   keyboardType: TextInputType.emailAddress,
-                  validator: (text) {
-                    setState(() {});
-                    if (text == null || text.trim().isEmpty) {
-                      return "please Enter the email";
-                    }
-                    setState(() {});
-                    if (!emailValidation(text)) {
-                      return "bad format";
-                    }
-                    setState(() {});
-                    return null;
-                  },
-                  controller: email,
+                  validator: qValidator([
+                    IsRequired("Please enter your email"),
+                    const IsEmail("Please enter a valid email"),
+                  ]),
+                  // (text) {
+                  //   setState(() {});
+                  //   if (text == null || text.trim().isEmpty) {
+                  //     return "please Enter the email";
+                  //   }
+                  //   setState(() {});
+                  //   if (!emailValidation(text)) {
+                  //     return "bad format";
+                  //   }
+                  //   setState(() {});
+                  //   return null;
+                  // },
+                  controller: emailController,
                 ),
                 const SizedBox(
                   height: 30,
@@ -133,12 +138,16 @@ class _LoginScreenState extends State<LoginScreen> {
                   height: 9,
                 ),
                 PersonTextFormField(
+                  isHide: false,
                   icon: Icons.remove_red_eye,
                   hintText: "",
                   label: "Enter Your Password",
                   keyboardType: TextInputType.visiblePassword,
-                  validator: passwordValidation,
-                  controller: password,
+                  validator: qValidator([
+                    IsRequired(),
+                    MinLength(6, "Please enter a valid password"),
+                  ]),
+                  controller: passwordController,
                 ),
                 const SizedBox(
                   height: 10,
@@ -172,12 +181,13 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 MaterialButton(
                   onPressed: () {
-                    checkAccount();
-                    Navigator.pushNamed(
-                      context,
-                      HospitalHomePage.routeName,
-                    );
-                    setState(() {});
+                    setState(() {
+                      checkAccount();
+                    });
+                    // Navigator.pushNamed(
+                    //   context,
+                    //   HospitalHomePage.routeName,
+                    // );
                   },
                   shape: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(15),
@@ -237,13 +247,14 @@ class _LoginScreenState extends State<LoginScreen> {
     if (formKey.currentState?.validate() == true) {
       try {
         final repo = repoSignal.value;
-        final response = repo.login("email", "password");
-        if (response != null) {
-          Navigator.pushNamed(
-            context,
-            HospitalHomePage.routeName,
-          );
-        }
+        final response =
+            repo.login(emailController.text, passwordController.text);
+        // if (response != null) {
+        //   Navigator.pushNamed(
+        //     context,
+        //     HospitalHomePage.routeName,
+        //   );
+        // }
       } on ApiException catch (e) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
