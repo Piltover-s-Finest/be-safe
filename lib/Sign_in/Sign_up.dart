@@ -1,15 +1,12 @@
 import 'package:be_safe3/Apis/exceptions.dart';
 import 'package:be_safe3/Sign_in/Login.dart';
 import 'package:be_safe3/Sign_in/otp%20screen.dart';
-
-import 'package:be_safe3/Sign_in/validation.dart';
 import 'package:be_safe3/signals/api_signals.dart';
 import 'package:flutter/material.dart';
-import 'package:qr_flutter/qr_flutter.dart';
 import 'package:queen_validators/queen_validators.dart';
+import 'package:quickalert/quickalert.dart';
 
 import 'FormField.dart';
-import '../HomeScreen.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({super.key});
@@ -270,18 +267,23 @@ class SignUpState extends State<SignUp> {
                           address: addressTxtController.text,
                         );
                         if (!context.mounted) return;
+                        
                         Navigator.of(context).pushNamedAndRemoveUntil(
                           OtpScreen.routName,
                           (Route<dynamic> route) => false,
                         );
                       } on ApiException catch (e) {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(
-                              content: Text(e.message),
-                              backgroundColor: Colors.redAccent,
-                              duration: const Duration(seconds: 2),
-                            ),
-                          );
+                        QuickAlert.show(
+                          context: context,
+                          type: QuickAlertType.warning,
+                          title: 'Oops...',
+                          text: e.message,
+                          backgroundColor: Colors.black,
+                          titleColor: Colors.white,
+                          textColor: Colors.white,
+                          
+                        );
+
                       }
                     }
                   },
