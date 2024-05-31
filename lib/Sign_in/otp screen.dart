@@ -3,6 +3,7 @@ import 'package:be_safe3/signals/api_signals.dart';
 import 'package:flutter/material.dart';
 import 'package:pinput/pinput.dart';
 import 'package:queen_validators/queen_validators.dart';
+import 'package:quickalert/quickalert.dart';
 
 class OtpScreen extends StatefulWidget {
   final String email;
@@ -52,9 +53,16 @@ class _OtpScreenState extends State<OtpScreen> {
         Navigator.pushNamed(context, '/home');
         return;
       } on ApiException catch (e) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text(e.message)),
-        );
+        QuickAlert.show(
+                          context: context,
+                          type: QuickAlertType.warning,
+                          title: 'Oops...',
+                          text: e.message,
+                          backgroundColor: Colors.black,
+                          titleColor: Colors.white,
+                          textColor: Colors.white,
+                          
+                        );
         return;
       }
     }
@@ -63,8 +71,16 @@ class _OtpScreenState extends State<OtpScreen> {
       if (!mounted) return;
       Navigator.pushNamed(context, '/home');
     } on ApiException catch (e) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(e.message)),
+        QuickAlert.show(
+                          context: context,
+                          type: QuickAlertType.warning,
+                          title: 'Oops...',
+                          text: e.message,
+                          backgroundColor: Colors.black,
+                          titleColor: Colors.white,
+                          textColor: Colors.white,
+                          
+                        
       );
     }
   }
@@ -76,9 +92,16 @@ class _OtpScreenState extends State<OtpScreen> {
       await repo.sendEmailVerification(widget.email);
     }
     if (!mounted) return;
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text('Code sent successfully')),
-    );
+      QuickAlert.show(
+                          context: context,
+                          type: QuickAlertType.success,
+                          title: 'success',
+                          text: "code sent succseful",
+                          backgroundColor: Colors.black,
+                          titleColor: Colors.white,
+                          textColor: Colors.white,
+                          
+                        );
   }
 
   @override
