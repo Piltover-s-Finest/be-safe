@@ -37,7 +37,9 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'Tabs/map/mapScreen.dart';
+
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   final sharedPref = await SharedPreferences.getInstance();
   prefsSignal.overrideWith(sharedPref);
   runApp(const MyApp());
