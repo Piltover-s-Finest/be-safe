@@ -1,4 +1,7 @@
+import 'dart:convert';
 import 'dart:developer';
+import 'dart:ffi';
+import 'dart:math';
 
 import 'package:be_safe3/Apis/exceptions.dart';
 import 'package:be_safe3/Hospital/HomeScreen.dart';
@@ -7,9 +10,17 @@ import 'package:be_safe3/Sign_in/Sign_up.dart';
 import 'package:be_safe3/Sign_in/forgetpassword.dart';
 import 'package:be_safe3/Sign_in/validation.dart';
 import 'package:be_safe3/Tabs/Summary_Screen/Summary_Screen.dart';
+import 'package:be_safe3/models/user_model.dart';
 import 'package:be_safe3/signals/api_signals.dart';
+import 'package:be_safe3/signals/prefs_signal.dart';
 import 'package:flutter/material.dart';
 import 'package:queen_validators/queen_validators.dart';
+import 'package:quickalert/quickalert.dart';
+import 'package:quickalert/widgets/quickalert_dialog.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:signals/signals.dart';
+
+import 'otp screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -138,7 +149,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   height: 9,
                 ),
                 PersonTextFormField(
-                  isHide: false,
+                  isHide: true,
                   icon: Icons.remove_red_eye,
                   hintText: "",
                   label: "Enter Your Password",
@@ -179,7 +190,50 @@ class _LoginScreenState extends State<LoginScreen> {
                   height: 20,
                 ),
                 MaterialButton(
-                  onPressed: checkAccount,
+                  onPressed: () async {
+                    SharedPreferences prefs =
+                        await SharedPreferences.getInstance();
+
+                    if (formKey.currentState?.validate() == true) {
+                      try {
+                        UserModel userModel = await repoSignal.value.login(
+                          email: email.text,
+                          password: password.text,
+                        );
+
+                        userModelSignal.value = userModel;
+                        final String jsonString = jsonEncode(userModel);
+
+                        prefs.setString("userModel",jsonString);
+
+                        if (!context.mounted) return;
+
+                        Navigator.of(context).pushNamedAndRemoveUntil(
+                          SummaryScreen.routName,
+                          (Route<dynamic> route) => false,
+                        );
+                      } on ApiException catch (e) {
+                        QuickAlert.show(
+                          context: context,
+                          type: QuickAlertType.warning,
+                          title: 'Oops...',
+                          text: e.message,
+                          backgroundColor: Colors.black,
+                          titleColor: Colors.white,
+                          textColor: Colors.white,
+                          onConfirmBtnTap: () {
+                            repoSignal.value.sendEmailVerification(email.text);
+                            Navigator.of(context).pushAndRemoveUntil(
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      OtpScreen(email: email.text)),
+                              (Route<dynamic> route) => false,
+                            );
+                          },
+                        );
+                      }
+                    }
+                  },
                   shape: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(15),
                     borderSide: const BorderSide(
@@ -234,28 +288,28 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
-  Future<void> checkAccount() async {
-    log('${email.text} | ${password.text}');
+  // Future<void> checkAccount() async {
+  //   log('${email.text} | ${password.text}');
 
-    if (formKey.currentState?.validate() == true) {
-      try {
-        final repo = repoSignal.value;
-        await repo.login(email.text, password.text);
+  //   if (formKey.currentState?.validate() == true) {
+  //     try {
+  //       final repo = repoSignal.value;
+  //       await repo.login(email.text, password.text);
 
-        while (Navigator.of(context).canPop()) {
-          Navigator.pop(context);
-        }
-        Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(builder: (context) => SummaryScreen()),
-        );
-      } on ApiException catch (e) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text(e.message),
-          ),
-        );
-      }
-    }
-  }
+  //       while (Navigator.of(context).canPop()) {
+  //         Navigator.pop(context);
+  //       }
+  //       Navigator.pushReplacement(
+  //         context,
+  //         MaterialPageRoute(builder: (context) => SummaryScreen()),
+  //       );
+  //     } on ApiException catch (e) {
+  //       ScaffoldMessenger.of(context).showSnackBar(
+  //         SnackBar(
+  //           content: Text(e.message),
+  //         ),
+  //       );
+  //     }
+  //   }
+  // }
 }
