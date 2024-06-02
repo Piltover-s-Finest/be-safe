@@ -8,7 +8,7 @@ class MainRepository {
 
   MainRepository(this._client);
 
-  Future<UserModel> login(String email, String password) async {
+  Future<UserModel> login({required email,required String password}) async {
     return _errorWrapper(() async {
       final response = await _client.post(
         '/account/login',
@@ -17,6 +17,7 @@ class MainRepository {
           'password': password,
         },
       );
+      
       return UserModel.fromJson(response.data);
     });
   }

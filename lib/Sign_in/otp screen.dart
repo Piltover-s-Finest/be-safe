@@ -1,4 +1,6 @@
 import 'package:be_safe3/Apis/exceptions.dart';
+import 'package:be_safe3/Sign_in/FormField.dart';
+import 'package:be_safe3/Sign_in/Login.dart';
 import 'package:be_safe3/signals/api_signals.dart';
 import 'package:flutter/material.dart';
 import 'package:pinput/pinput.dart';
@@ -13,8 +15,7 @@ class OtpScreen extends StatefulWidget {
     required this.email,
     this.isForgetPassword = false,
   });
-  static const String routName = 'Otp Screen';
-
+  static const String routName = 'OtpScreen';
   @override
   State<OtpScreen> createState() => _OtpScreenState();
 }
@@ -50,37 +51,38 @@ class _OtpScreenState extends State<OtpScreen> {
           pinController.text,
         );
         if (!mounted) return;
-        Navigator.pushNamed(context, '/home');
+        Navigator.of(context).pushNamedAndRemoveUntil(
+            LoginScreen.routName, (Route<dynamic> route) => false);
         return;
       } on ApiException catch (e) {
         QuickAlert.show(
-                          context: context,
-                          type: QuickAlertType.warning,
-                          title: 'Oops...',
-                          text: e.message,
-                          backgroundColor: Colors.black,
-                          titleColor: Colors.white,
-                          textColor: Colors.white,
-                          
-                        );
+          context: context,
+          type: QuickAlertType.warning,
+          title: 'Oops...',
+          text: e.message,
+          backgroundColor: Colors.black,
+          titleColor: Colors.white,
+          textColor: Colors.white,
+        );
         return;
       }
     }
     try {
       await repo.verifyEmail(widget.email, pinController.text);
       if (!mounted) return;
-      Navigator.pushNamed(context, '/home');
+      Navigator.of(context).pushAndRemoveUntil(
+        MaterialPageRoute(builder: (context) => const LoginScreen()),
+        (Route<dynamic> route) => false,
+      );
     } on ApiException catch (e) {
-        QuickAlert.show(
-                          context: context,
-                          type: QuickAlertType.warning,
-                          title: 'Oops...',
-                          text: e.message,
-                          backgroundColor: Colors.black,
-                          titleColor: Colors.white,
-                          textColor: Colors.white,
-                          
-                        
+      QuickAlert.show(
+        context: context,
+        type: QuickAlertType.warning,
+        title: 'Oops...',
+        text: e.message,
+        backgroundColor: Colors.black,
+        titleColor: Colors.white,
+        textColor: Colors.white,
       );
     }
   }
@@ -92,16 +94,15 @@ class _OtpScreenState extends State<OtpScreen> {
       await repo.sendEmailVerification(widget.email);
     }
     if (!mounted) return;
-      QuickAlert.show(
-                          context: context,
-                          type: QuickAlertType.success,
-                          title: 'success',
-                          text: "code sent succseful",
-                          backgroundColor: Colors.black,
-                          titleColor: Colors.white,
-                          textColor: Colors.white,
-                          
-                        );
+    QuickAlert.show(
+      context: context,
+      type: QuickAlertType.success,
+      title: 'success',
+      text: "code sent succseful",
+      backgroundColor: Colors.black,
+      titleColor: Colors.white,
+      textColor: Colors.white,
+    );
   }
 
   @override
@@ -172,25 +173,23 @@ class _OtpScreenState extends State<OtpScreen> {
               if (widget.isForgetPassword)
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 16),
-                  child: TextFormField(
-                    controller: passController,
+                  child: PersonTextFormField(
+                    isHide: true,
+                    icon: Icons.lock,
+                    hintText: "",
+                    label: "Enter Your Password",
+                    keyboardType: TextInputType.visiblePassword,
                     validator: qValidator([
                       IsRequired("Please enter your password"),
                       MinLength(6, "Password should be more than 6 charcters"),
                       MaxLength(
                           50, "Password should be less than 50 charcters"),
                       RegExpRule(
-                        RegExp(
-                          r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$',
-                        ),
-                        "Password should contain uppercase letter,\nlowercase letter, numbers and  special charcter",
-                      ),
+                          RegExp(
+                              r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$'),
+                          "Password should contain uppercase letter, \n lowercase letter,  numbers and  special charcter"),
                     ]),
-                    decoration: const InputDecoration(
-                      labelText: 'New password',
-                      border: OutlineInputBorder(),
-                    ),
-                    obscureText: true,
+                    controller: passController,
                   ),
                 ),
               const SizedBox(height: 30),

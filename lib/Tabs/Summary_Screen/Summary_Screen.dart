@@ -11,6 +11,7 @@ import 'medical_tests.dart';
 
 class SummaryScreen extends StatelessWidget {
   SummaryScreen({super.key});
+  static const String routName = 'SummaryScreen';
 
   @override
   Widget build(BuildContext context) {

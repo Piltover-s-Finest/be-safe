@@ -28,6 +28,7 @@ import 'package:be_safe3/My%20Theme%20Data.dart';
 import 'package:be_safe3/Sign_in/Sign_up.dart';
 import 'package:be_safe3/Tabs/Payment/VisaScreen.dart';
 import 'package:be_safe3/Tabs/Summary_Screen/Medical%20Information%20Id/compelet%20Information.dart';
+import 'package:be_safe3/Tabs/Summary_Screen/Summary_Screen.dart';
 import 'package:be_safe3/Tabs/Summary_Screen/medical%20paper.dart';
 import 'package:be_safe3/Tabs/Summary_Screen/medical_tests.dart';
 import 'package:be_safe3/Tabs/Payment/register_payment_visa_refcode.dart';
@@ -43,7 +44,7 @@ void main() async {
   final sharedPref = await SharedPreferences.getInstance();
   prefsSignal.overrideWith(sharedPref);
   runApp(const MyApp());
-}
+} 
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -75,8 +76,8 @@ class MyApp extends StatelessWidget {
         // InformationPerson.routeName:(context) => const InformationPerson(),
         ForgetPassword.routName: (context) => const ForgetPassword(),
         NewPassword.routName: (context) => const NewPassword(),
-        // OtpScreen.routName: (context) => const OtpScreen(),
-        //OtpScreenSignup.routName:(context) => const OtpScreenSignup(),
+        OtpScreen.routName: (context) => const OtpScreen(email: '',),
+        // OtpScreenSignup.routName:(context) => const OtpScreenSignup(),
         MyProfile.routName: (context) => const MyProfile(),
         RelatedAccount.routName: (context) => const RelatedAccount(),
         MyQRCode.routName: (context) => MyQRCode(),
@@ -89,6 +90,7 @@ class MyApp extends StatelessWidget {
         HospitalHomePage.routeName: (context) => const HospitalHomePage(),
         MyProfileHospital.routName: (context) => const MyProfileHospital(),
         SplashScreen.routName: (context) => const SplashScreen(),
+        SummaryScreen.routName: (context) =>  SummaryScreen(),
       },
       theme: MyThemeData.darkTheme,
     );
